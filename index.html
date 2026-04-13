@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>PC Work Vertical | Reabilitação de Fachadas & Trabalhos Verticais</title>
+  <meta name="description" content="Especialistas em Reabilitação de Fachadas e Trabalhos Verticais em Portugal. Engenharia de precisão aplicada à manutenção de estruturas complexas." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#131314",
+            "surface-variant": "#353436",
+            "surface-container": "#1f1f20",
+            "on-error": "#690005",
+            "outline": "#a18d7f",
+            "inverse-primary": "#904d00",
+            "tertiary-fixed": "#a7edff",
+            "inverse-on-surface": "#303031",
+            "on-primary-container": "#663500",
+            "on-secondary-fixed": "#2f1500",
+            "secondary-fixed": "#ffdcc3",
+            "outline-variant": "#544438",
+            "primary-fixed": "#ffdcc3",
+            "on-tertiary-fixed-variant": "#004e5b",
+            "on-tertiary-fixed": "#001f25",
+            "secondary-fixed-dim": "#efbc95",
+            "tertiary-container": "#34bdd7",
+            "surface-dim": "#131314",
+            "primary-fixed-dim": "#ffb77d",
+            "surface-container-high": "#2a2a2b",
+            "on-tertiary": "#00363f",
+            "on-surface-variant": "#d9c2b3",
+            "inverse-surface": "#e5e2e3",
+            "on-secondary-container": "#dcab85",
+            "primary": "#ffbb84",
+            "surface-tint": "#ffb77d",
+            "on-surface": "#e5e2e3",
+            "on-secondary-fixed-variant": "#623f21",
+            "on-primary-fixed-variant": "#6e3900",
+            "tertiary": "#5ad9f4",
+            "secondary": "#efbc95",
+            "surface-container-lowest": "#0e0e0f",
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "on-secondary": "#48290d",
+            "on-primary-fixed": "#2f1500",
+            "secondary-container": "#623f21",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#57d6f1",
+            "surface-container-highest": "#353436",
+            "surface-bright": "#39393a",
+            "primary-container": "#f2994a",
+            "surface": "#131314",
+            "on-tertiary-container": "#004854",
+            "on-primary": "#4d2600",
+            "surface-container-low": "#1b1b1c",
+            "on-background": "#e5e2e3"
+          },
+          borderRadius: {
+            DEFAULT: "0px",
+            lg: "0px",
+            xl: "0px",
+            full: "0px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Inter", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Hero text glow */
+    .text-glow {
+      text-shadow: 0 0 30px rgba(242, 153, 74, 0.3);
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #131314;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #353436;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f2994a;
+    }
+
+    /* Fade-in animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 h-20 transition-all duration-300">
+    <a href="#" class="text-xl font-black tracking-tighter text-white font-headline">
+      PC WORK VERTICAL
+    </a>
+
+    <div class="hidden md:flex gap-10 font-headline uppercase tracking-[0.05em] font-bold text-sm">
+      <a class="text-[#f2994a] border-b-2 border-[#f2994a] pb-1 hover:text-white transition-colors duration-150" href="#services">Expertise</a>
+      <a class="text-gray-400 hover:text-white transition-colors duration-150" href="#projects">Projects</a>
+      <a class="text-gray-400 hover:text-white transition-colors duration-150" href="#process">Process</a>
+      <a class="text-gray-400 hover:text-white transition-colors duration-150" href="#contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <a href="#contact" class="hidden sm:inline-flex bg-primary-container text-on-primary-container font-headline uppercase tracking-[0.05em] font-bold text-sm px-6 py-2 transition-all hover:bg-primary duration-150">
+        GET ESTIMATE
+      </a>
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-white">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-background/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10">
+    <button id="closeMenu" class="absolute top-6 right-6 text-white">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <a class="text-2xl font-headline font-bold uppercase tracking-widest text-primary-container" href="#services" onclick="closeMobileMenu()">Expertise</a>
+    <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#projects" onclick="closeMobileMenu()">Projects</a>
+    <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#process" onclick="closeMobileMenu()">Process</a>
+    <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" onclick="closeMobileMenu()" class="bg-primary-container text-on-primary-container font-headline uppercase tracking-[0.05em] font-bold text-lg px-10 py-4 mt-4">
+      GET ESTIMATE
+    </a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-end overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <img
+          class="w-full h-full object-cover grayscale opacity-60"
+          alt="dramatic high-angle cinematic shot of a modern skyscraper facade under renovation"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsRJG-4ZH_9V_xNINMbsl3S5uu7NLTA17VxrLnkKg-x6C4qCtLcZTd0gk2RnkUACSVyBWdz1-BtDzPFLCocZCBakROBolgpXQSsW_6Et1oSzSJShUVQWNudfwmRkL5ndWgueRT3xBlJqx-SMa44LoYAqWdQyk5YQybohVIlbZfRJSwhvSHtzIE_pBrhCkPNI_vQvGSuNfc1gsga1jSN62DO3BxZJPxCIsHfaTx1Mz0sa3BNOinCJ_ISvW0yS6D-TkZwB2OFI1VbQ"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-6xl">
+        <span class="text-tertiary font-label text-xs md:text-sm tracking-[0.3em] uppercase block mb-4 md:mb-6">Lisboa / Amadora &bull; Portugal</span>
+        <h1 class="font-headline font-black text-4xl sm:text-6xl md:text-8xl leading-tight tracking-tighter mb-6 md:mb-8 uppercase">
+          EXCEL&Ecirc;NCIA EM ALTURA.<br />
+          <span class="text-primary-container text-glow">PRECIS&Atilde;O EM CADA DETALHE.</span>
+        </h1>
+        <p class="font-body text-base md:text-xl text-on-surface-variant max-w-2xl mb-8 md:mb-12 leading-relaxed">
+          Especialistas em Reabilita&ccedil;&atilde;o de Fachadas e Trabalhos Verticais em Portugal. Engenharia de precis&atilde;o aplicada &agrave; manuten&ccedil;&atilde;o de estruturas complexas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+          <a href="#contact" class="bg-primary-container text-on-primary-container px-8 md:px-10 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-3">
+            SOLICITAR OR&Ccedil;AMENTO
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="#projects" class="border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-white/10 transition-colors text-center">
+            VER PROJETOS
+          </a>
+        </div>
+      </div>
+
+      <!-- Monolith Side Label -->
+      <div class="absolute right-0 bottom-1/4 hidden lg:block origin-bottom-right rotate-90 translate-y-full px-12">
+        <span class="text-[12rem] font-black text-white/5 font-headline uppercase leading-none select-none">VERTICAL</span>
+      </div>
+    </section>
+
+    <!-- Credibility Bar -->
+    <section class="bg-surface-container-low py-10 md:py-12 px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-l-2 border-primary-container/30 pl-6 md:pl-8">
+        <div class="flex flex-col">
+          <span class="text-tertiary font-label text-xs tracking-widest uppercase mb-1">Maturidade</span>
+          <span class="text-white font-headline font-bold text-lg md:text-2xl uppercase">10 ANOS DE EXPERI&Ecirc;NCIA NO MERCADO PORTUGU&Ecirc;S</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-tertiary font-label text-xs tracking-widest uppercase mb-1">Localiza&ccedil;&atilde;o</span>
+          <span class="text-white font-headline font-bold text-lg md:text-2xl uppercase">SEDE EM AMADORA</span>
+        </div>
+        <div class="hidden xl:block">
+          <span class="text-on-surface-variant/40 font-headline text-4xl font-black">2014&mdash;2024</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 px-6 md:px-12 bg-background">
+      <div class="mb-16 md:mb-20 fade-up">
+        <span class="text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">Nossos Servi&ccedil;os</span>
+        <h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter">Engenharia de Fachadas</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+        <!-- Service 1 -->
+        <div class="group relative bg-surface-container overflow-hidden border-b md:border-b-0 md:border-r border-white/5 fade-up">
+          <div class="h-64 md:h-80 overflow-hidden">
+            <img
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              alt="Isolamento de fachadas - aplicação de sistema ETICS"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcYIqQQPTiOKtiq6Y5ECe7utsnar6MxwwU8mdfWtVRjjPY-nOYIZmMCPObSpfFsQ0w_IY8LoguxeopOY9dFPoyytZrhzrVX4KxBPNbBJ1mLVVIZSz7wVpdI_4npUuG2HavhydBjPkBeeGBpUHjYYaQpCY45RnY04xCEIdSQIv3Lz3bCc3yyPLgT5d3RrkijVzk2zB5wgTm8BBp_WxvXaAlnZsLJD0q9wMSX4NnMkLEVpn-JrUPueFMBa4vtaEc1dpglF2u0yHNjQ"
+            />
+          </div>
+          <div class="p-8 md:p-10">
+            <span class="text-tertiary font-label text-sm font-bold mb-4 block">01 / ISOLAMENTO</span>
+            <h3 class="font-headline font-bold text-2xl text-white mb-4 md:mb-6 uppercase">Isolamento de Fachadas</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8">Especialistas em sistemas t&eacute;rmicos e ac&uacute;sticos de alta performance (ETICS/Cappotto), garantindo efici&ecirc;ncia energ&eacute;tica e durabilidade estrutural.</p>
+            <div class="flex items-center gap-2 text-primary font-label text-xs tracking-widest uppercase font-bold cursor-pointer group-hover:gap-4 transition-all">
+              TECHNICAL SPECS <span class="material-symbols-outlined text-sm">north_east</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="group relative bg-surface-container-high overflow-hidden border-b md:border-b-0 md:border-r border-white/5 fade-up" style="transition-delay: 0.1s">
+          <div class="h-64 md:h-80 overflow-hidden">
+            <img
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              alt="Remodelação de interiores com acabamentos premium"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUXle1ZUBh0yJWVyM4nJV6huVH_7DKPGA-8VxRXBMH9wIsHiMq3rszRrH7uaN5YIABU6QgsQbqL-XyxjWfHLtIu8jOZaNdi--HiG9yxPXNThGytlCRZ8zfbCHZw5sfyVBlfh0s_q2-Usst_Fk-cGAwcFZXsBLVb5TNXB-tqh2oeLkKyQ6H4oHJ9Ou-GZ7y-yFzz8_yxgf9YoGW4wKCbpGZrrtfiFzndsJRfF4XSjThO5ZUTRtINOl82ZizAqq55-GmpeK2ZzDTMg"
+            />
+          </div>
+          <div class="p-8 md:p-10">
+            <span class="text-tertiary font-label text-sm font-bold mb-4 block">02 / INTERIORES</span>
+            <h3 class="font-headline font-bold text-2xl text-white mb-4 md:mb-6 uppercase">Remodela&ccedil;&atilde;o</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8">Transforma&ccedil;&atilde;o de espa&ccedil;os com acabamentos premium. Design contempor&acirc;neo e execu&ccedil;&atilde;o t&eacute;cnica rigorosa para projetos de luxo.</p>
+            <div class="flex items-center gap-2 text-primary font-label text-xs tracking-widest uppercase font-bold cursor-pointer group-hover:gap-4 transition-all">
+              TECHNICAL SPECS <span class="material-symbols-outlined text-sm">north_east</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="group relative bg-surface-container-highest overflow-hidden fade-up" style="transition-delay: 0.2s">
+          <div class="h-64 md:h-80 overflow-hidden">
+            <img
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              alt="Reabilitação estrutural de edifício histórico"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiiXOdfI643PAWrSFnMO0uMRTxiEULlro0yDGt6gqEMhfGhYfjUSG06TUfbyrmIzxuEI8d2KiX2awbRXm4yn6TcxKq_TGmN7J0XhgiSTCgDoRelwik2IWXViPXpH9rPQo5qoYZdZPR7cyeV-uKTwSqeh4x-upgIXK3wlryGlEJjE5BgfAI2k46DhtuLEU3R_oJUqTJD_v_s1XqnJGW_JG3zX-207Bpo2Ngq5QDLyKCNKguytWfkn5mwNNSeqTov3mlB0OZt6gqUQ"
+            />
+          </div>
+          <div class="p-8 md:p-10">
+            <span class="text-tertiary font-label text-sm font-bold mb-4 block">03 / ESTRUTURA</span>
+            <h3 class="font-headline font-bold text-2xl text-white mb-4 md:mb-6 uppercase">Reabilita&ccedil;&atilde;o</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-6 md:mb-8">Restaura&ccedil;&atilde;o est&eacute;tica e funcional de edif&iacute;cios degradados, utilizando materiais de &uacute;ltima gera&ccedil;&atilde;o para preserva&ccedil;&atilde;o patrimonial.</p>
+            <div class="flex items-center gap-2 text-primary font-label text-xs tracking-widest uppercase font-bold cursor-pointer group-hover:gap-4 transition-all">
+              TECHNICAL SPECS <span class="material-symbols-outlined text-sm">north_east</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 md:py-32 px-6 md:px-12 bg-surface-container-low flex flex-col lg:flex-row gap-12 md:gap-20">
+      <div class="lg:w-1/2 fade-up">
+        <span class="text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">A Nossa Empresa</span>
+        <h2 class="font-headline font-black text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter mb-8 md:mb-10 leading-none">
+          A ARTE DO <br /><span class="text-outline-variant">TRABALHO VERTICAL.</span>
+        </h2>
+        <div class="space-y-6 text-on-surface-variant font-body text-base md:text-lg max-w-xl">
+          <p>Na PC Work Vertical, n&atilde;o apenas pintamos paredes; n&oacute;s protegemos o seu investimento. Com foco em seguran&ccedil;a absoluta e expertise t&eacute;cnica, elevamos os padr&otilde;es da reabilita&ccedil;&atilde;o em Portugal.</p>
+          <p>Nossa abordagem combina o rigor da engenharia com a agilidade do acesso por corda, permitindo interven&ccedil;&otilde;es complexas onde andaimes convencionais falham.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8 md:gap-10 mt-12 md:mt-16 border-t border-white/5 pt-10 md:pt-12">
+          <div>
+            <div class="text-3xl md:text-4xl font-headline font-bold text-white mb-2">100%</div>
+            <div class="text-xs font-label uppercase tracking-widest text-tertiary">SEGURAN&Ccedil;A GARANTIDA</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-headline font-bold text-white mb-2">500+</div>
+            <div class="text-xs font-label uppercase tracking-widest text-tertiary">PROJETOS CONCLU&Iacute;DOS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2 relative fade-up" style="transition-delay: 0.2s">
+        <div class="aspect-square bg-surface border-l-4 border-primary-container p-4">
+          <img
+            class="w-full h-full object-cover grayscale opacity-80"
+            alt="Técnico de acesso por corda em trabalho vertical"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1CTvjF65t03lrNr1PUx8993rdDg-fgv-LWzrpb5Rp8rv0e6a80xAO6Ldkh6W5yhNIu4huXJ216o5wglcFciXCW7fRpMDIPQaeYucaXm94-s0PCRJGo-NvioBpU1j3-V0Jqvj4bxoGSPsxrHQ4re18kMrhWNnX51Lrm5gd_0NzAXg-T1yV1MDT22J18VIJO0Ky1AXIQzr2dzbpQOvKowAnYKVPARChkFOPoWfEmHmAG9ACRjhSkCwoPBFv-qtXrl-ZLUYFrduhA"
+          />
+        </div>
+        <div class="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 bg-primary-container p-6 md:p-8 hidden sm:block">
+          <span class="material-symbols-outlined text-on-primary-container text-4xl md:text-5xl" style="font-variation-settings: 'FILL' 1;">security</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-20 md:py-32 px-6 md:px-12 bg-background overflow-hidden">
+      <div class="flex justify-between items-end mb-16 md:mb-20 fade-up">
+        <div>
+          <span class="text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">Portf&oacute;lio</span>
+          <h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter">Projetos em Destaque</h2>
+        </div>
+        <div class="hidden md:block text-right">
+          <span class="font-headline text-8xl font-black text-white/5 uppercase leading-none">LISBOA</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[1000px]">
+        <!-- Large Featured -->
+        <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden h-80 md:h-auto fade-up">
+          <img
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+            alt="Condomínio Prime Amadora - reabilitação total"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD6gJroYClA8aBQbbGq_qrbuiccsmb5yTHnUyfnjYlpi3nURTLPsQGfRRHqSxBLYJvtZbtXZUOdTXl9A-tjhJ6_g5rY6vi4-gkhIbjIrb_B48U9BIeYuRtGwTnwTKGElO4TfQpN1UaGcB93wbOHQDok3DS9I5hXGknubdO9z8wAp0FmUyHbjajBobAT0LICD7DRka2hDdGPGIxBLiGf5Ex9t1EBDH3Vm69E8BoDzq3F95w_oiopkM9Sx6hssYzIsujT8I89AmzeA"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+          <div class="absolute bottom-8 md:bottom-10 left-6 md:left-10 p-4 md:p-6 bg-surface-container-highest/80 backdrop-blur-xl">
+            <span class="text-tertiary font-label text-xs tracking-widest uppercase block mb-1">REABILITA&Ccedil;&Atilde;O TOTAL</span>
+            <h4 class="text-white font-headline font-bold text-lg md:text-xl uppercase">Condom&iacute;nio Prime Amadora</h4>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="group relative overflow-hidden h-60 md:h-auto fade-up" style="transition-delay: 0.1s">
+          <img
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+            alt="Business Center Expo - fachada corporativa"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv69SvYsxzB-AP6kxaoBIzJrmfuxWr_8XyTxBPdU6sdoeE0mIVk1fv1Dixyn57p61bL3KyjuD1K8xb73pf38Q-jpnXZCfKUlnd8DD-16zCh5Q-7Fb_Fq6DgqGDe9M21yTZGCaHPGYeSvX0DiEfEpDVNp8L42fRI-btHmmdIbUEPQa74-EVficjH6mywIeg1jUZRbe8ym_H-d-YWg6OjGthWLMKN4pOf486pqwalateb_kZi-m-uDH1G0Gf02b4QC5mH-TQyKvSAg"
+          />
+          <div class="absolute bottom-4 md:bottom-6 left-4 md:left-6 p-3 md:p-4 bg-surface-container-highest/80 backdrop-blur-xl">
+            <h4 class="text-white font-headline font-bold text-sm uppercase">Business Center Expo</h4>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden h-60 md:h-auto fade-up" style="transition-delay: 0.15s">
+          <img
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+            alt="Edifício Miradouro - acabamentos modernos"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSh-lHBjsP9v8AQnxvPbI4U9r_YiHdEDPgZ8E_MMOmO7vLVhAyKcUx0JfPxtFveGOPxVsd1VJMX3G0k_I3sOkJOqXRiQ-KU1n1UDJWtWNlgxG0UCxcIOlY-47eGiskvq5MqWqdYBTwsbct3qYs6qexQQAioUkspWMPWB0nD7drIFhgGzH0rDFdiPTDm1lLypp60_WLDwZRo4qcD0EeVxHM59zThyiYsgCMaByssdOwwiX-h5lEsoJPCYIvZz0IRypzSvEZegeCPA"
+          />
+          <div class="absolute bottom-4 md:bottom-6 left-4 md:left-6 p-3 md:p-4 bg-surface-container-highest/80 backdrop-blur-xl">
+            <h4 class="text-white font-headline font-bold text-sm uppercase">Edif&iacute;cio Miradouro</h4>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 group relative overflow-hidden h-60 md:h-auto fade-up" style="transition-delay: 0.2s">
+          <img
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+            alt="Residencial Alfragide Tech - complexo habitacional renovado"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuATTi1PIl_jUZW5qtsM43OXgtSn6u8uRiSJKdiCYZDiF6myeXQILB0b62qplx8SfO6YKZHrhHictgaCJnSkJHCe4GdDQxes5cULtmNtJHBPs5FS_2KvJPV-GOvxJub17P28HUxuG5vaGC2mBE1jkYeiPPVwf0ZFH4KhCk0K_tAplhJO0ZsQNCwmh3lQ4GWV7nooIwkS_TX5UtBhjcATHXTjvW64RT5yIRhXWvahmxkMyYgcF6GmIIMEJ0C_xVmWoDGWIEbsbJ5xSA"
+          />
+          <div class="absolute bottom-4 md:bottom-6 left-4 md:left-6 p-3 md:p-4 bg-surface-container-highest/80 backdrop-blur-xl">
+            <h4 class="text-white font-headline font-bold text-sm uppercase">Residencial Alfragide Tech</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 md:py-32 px-6 md:px-12 bg-surface">
+      <div class="text-center mb-16 md:mb-24 fade-up">
+        <span class="text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">Metodologia</span>
+        <h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter">O Nosso Processo</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative">
+        <!-- Connecting Line -->
+        <div class="hidden md:block absolute top-10 left-0 w-full h-[1px] bg-white/10 z-0"></div>
+
+        <div class="relative z-10 fade-up">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-surface-container-highest border border-primary-container mb-6 md:mb-8 flex items-center justify-center text-primary-container font-headline text-2xl md:text-3xl font-black">1</div>
+          <h4 class="text-white font-headline font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Consulta</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Avalia&ccedil;&atilde;o inicial no local e diagn&oacute;stico t&eacute;cnico das necessidades estruturais e est&eacute;ticas.</p>
+        </div>
+
+        <div class="relative z-10 fade-up" style="transition-delay: 0.1s">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-surface-container-highest border border-primary-container mb-6 md:mb-8 flex items-center justify-center text-primary-container font-headline text-2xl md:text-3xl font-black">2</div>
+          <h4 class="text-white font-headline font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Planeamento</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Defini&ccedil;&atilde;o de cronograma, materiais t&eacute;cnicos e protocolos de seguran&ccedil;a rigorosos.</p>
+        </div>
+
+        <div class="relative z-10 fade-up" style="transition-delay: 0.2s">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-surface-container-highest border border-primary-container mb-6 md:mb-8 flex items-center justify-center text-primary-container font-headline text-2xl md:text-3xl font-black">3</div>
+          <h4 class="text-white font-headline font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Execu&ccedil;&atilde;o T&eacute;cnica</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Interven&ccedil;&atilde;o por profissionais qualificados utilizando as mais avan&ccedil;adas t&eacute;cnicas verticais.</p>
+        </div>
+
+        <div class="relative z-10 fade-up" style="transition-delay: 0.3s">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-primary-container border border-primary-container mb-6 md:mb-8 flex items-center justify-center text-on-primary-container font-headline text-2xl md:text-3xl font-black">4</div>
+          <h4 class="text-white font-headline font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Entrega</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Verifica&ccedil;&atilde;o final de qualidade e garantia de satisfa&ccedil;&atilde;o com acabamento premium.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 px-6 md:px-12 bg-surface-container-lowest">
+      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 md:gap-24">
+        <div class="lg:w-1/3 fade-up">
+          <h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter mb-6 md:mb-8 leading-none">
+            VAMOS<br />ELEVAR O SEU<br /><span class="text-primary-container">PROJETO.</span>
+          </h2>
+          <p class="text-on-surface-variant mb-10 md:mb-12">Entre em contacto para uma consultoria t&eacute;cnica detalhada ou pedido de or&ccedil;amento sem compromisso.</p>
+
+          <div class="space-y-6 md:space-y-8">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-tertiary">phone_iphone</span>
+              <div>
+                <div class="text-xs font-label uppercase text-on-surface-variant/50">Ligue-nos</div>
+                <div class="text-white font-headline font-bold text-lg">+351 9XX XXX XXX</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-tertiary">mail</span>
+              <div>
+                <div class="text-xs font-label uppercase text-on-surface-variant/50">E-mail</div>
+                <div class="text-white font-headline font-bold text-lg">geral@pcwork.pt</div>
+              </div>
+            </div>
+            <button class="w-full bg-[#25D366] text-white py-4 font-headline font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:opacity-90 transition-opacity">
+              <span class="material-symbols-outlined">chat</span>
+              WHATSAPP DIRECTO
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:w-2/3 bg-surface p-8 md:p-12 border border-white/5 fade-up" style="transition-delay: 0.15s">
+          <form class="space-y-6 md:space-y-8" onsubmit="event.preventDefault()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div class="space-y-2">
+                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Nome Completo</label>
+                <input class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="text" placeholder="O seu nome" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Contacto Telef&oacute;nico</label>
+                <input class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="tel" placeholder="+351" />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Tipo de Servi&ccedil;o</label>
+              <select class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4">
+                <option>Isolamento de Fachadas</option>
+                <option>Remodela&ccedil;&atilde;o Geral</option>
+                <option>Reabilita&ccedil;&atilde;o Estrutural</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Mensagem / Descri&ccedil;&atilde;o do Projeto</label>
+              <textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" rows="4" placeholder="Descreva o seu projeto..."></textarea>
+            </div>
+            <button class="bg-primary-container text-on-primary-container px-10 md:px-12 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-primary transition-colors w-full md:w-auto" type="submit">
+              ENVIAR SOLICITA&Ccedil;&Atilde;O
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#131314] flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-12 md:py-16 border-t border-white/5">
+    <div class="flex flex-col gap-3 mb-6 md:mb-0 text-center md:text-left">
+      <div class="text-lg font-bold text-white font-headline">PC WORK VERTICAL</div>
+      <p class="font-body text-xs tracking-widest uppercase text-gray-500">
+        &copy; 2024 PC WORK VERTICAL. ENGINEERED PRECISION.
+      </p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 md:gap-8 font-body text-xs tracking-widest uppercase text-gray-500">
+      <a class="text-gray-600 hover:text-[#f2994a] transition-colors" href="#">Terms of Service</a>
+      <a class="text-gray-600 hover:text-[#f2994a] transition-colors" href="#">Safety Protocols</a>
+      <a class="text-gray-600 hover:text-[#f2994a] transition-colors" href="#">Certifications</a>
+      <a class="text-gray-600 hover:text-[#f2994a] transition-colors" href="#">Technical Specs</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('bg-[#131314]/95', 'shadow-2xl');
+      } else {
+        navbar.classList.remove('bg-[#131314]/95', 'shadow-2xl');
+      }
+    });
+
+    // Scroll fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-[#f2994a]', 'border-b-2', 'border-[#f2994a]', 'pb-1');
+        link.classList.add('text-gray-400');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('text-[#f2994a]', 'border-b-2', 'border-[#f2994a]', 'pb-1');
+          link.classList.remove('text-gray-400');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

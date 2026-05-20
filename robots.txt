@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /code.html
+Disallow: /DESIGN.md
+
+Sitemap: https://pcworkvertical.pt/sitemap.xml

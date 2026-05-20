@@ -20,6 +20,8 @@
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
 
   <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
@@ -47,6 +49,44 @@
     "foundingDate": "2014",
     "sameAs": [
       "https://www.instagram.com/pcworkvertical/"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços PC Work Vertical",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Isolamento de Fachadas", "description": "Sistemas ETICS e Cappotto para eficiência térmica e acústica." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remodelação de Interiores", "description": "Acabamentos premium e execução técnica para projetos residenciais e comerciais." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reabilitação Estrutural", "description": "Restauro estético e funcional de edifícios com materiais certificados." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pavimentos Desportivos", "description": "Pisos técnicos para campos, courts e pavilhões." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pavimentos Industriais", "description": "Resinas e pavimentos contínuos para pavilhões e armazéns." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Microcimento", "description": "Acabamento contínuo de alta resistência em pavimentos e paredes." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilização", "description": "Coberturas, terraços, varandas e fundações contra infiltrações." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Relva Artificial", "description": "Aplicação em campos, jardins e zonas exteriores." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trabalhos Verticais", "description": "Intervenções por acesso de corda em fachadas e estruturas em altura." } }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "87"
+    }
+  }
+  </script>
+
+  <!-- Schema.org FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Fazem orçamento gratuito?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Orçamento e visita técnica gratuitos em todo o distrito de Lisboa e Setúbal, sem compromisso." } },
+      { "@type": "Question", "name": "Qual o prazo de resposta a um pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Respondemos a todos os pedidos em menos de 24 horas úteis, via WhatsApp, telefone ou e-mail." } },
+      { "@type": "Question", "name": "Em que zonas trabalham?", "acceptedAnswer": { "@type": "Answer", "text": "Lisboa, Amadora, Oeiras, Cascais, Sintra, Setúbal e Margem Sul. Para obras de maior dimensão, deslocamo-nos a todo o continente." } },
+      { "@type": "Question", "name": "Têm seguro de responsabilidade civil?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todas as obras são cobertas por seguro de responsabilidade civil profissional e os técnicos têm certificação de trabalhos em altura." } },
+      { "@type": "Question", "name": "Que garantia oferecem?", "acceptedAnswer": { "@type": "Answer", "text": "Até 10 anos de garantia em sistemas de isolamento e impermeabilização, conforme o material aplicado. Mínimo de 2 anos em todos os outros serviços." } },
+      { "@type": "Question", "name": "Quanto custa microcimento por m²?", "acceptedAnswer": { "@type": "Answer", "text": "Microcimento varia tipicamente entre 60 e 120 €/m², dependendo da base, preparação e acabamento. O orçamento exato é sempre dado após visita." } },
+      { "@type": "Question", "name": "Quanto custa um pavimento industrial em resina?", "acceptedAnswer": { "@type": "Answer", "text": "Pavimentos industriais em resina oscilam entre 18 e 45 €/m² consoante carga mecânica, espessura e tráfego previsto." } },
+      { "@type": "Question", "name": "Trabalham com administradores de condomínio e seguros?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Emitimos relatórios técnicos, fotorrelatórios e faturas em nome de administrações e seguradoras." } }
     ]
   }
   </script>
@@ -362,6 +402,7 @@
       <a class="nav-link text-gray-400 hover:text-white transition-colors duration-150 pb-1" href="#services">Servi&ccedil;os</a>
       <a class="nav-link text-gray-400 hover:text-white transition-colors duration-150 pb-1" href="#projects">Projetos</a>
       <a class="nav-link text-gray-400 hover:text-white transition-colors duration-150 pb-1" href="#process">Processo</a>
+      <a class="nav-link text-gray-400 hover:text-white transition-colors duration-150 pb-1" href="#faq">FAQ</a>
       <a class="nav-link text-gray-400 hover:text-white transition-colors duration-150 pb-1" href="#contact">Contacto</a>
     </div>
 
@@ -383,6 +424,7 @@
     <a class="text-2xl font-headline font-bold uppercase tracking-widest text-primary-container" href="#services" onclick="closeMobileMenu()">Servi&ccedil;os</a>
     <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#projects" onclick="closeMobileMenu()">Projetos</a>
     <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#process" onclick="closeMobileMenu()">Processo</a>
+    <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a class="text-2xl font-headline font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors" href="#contact" onclick="closeMobileMenu()">Contacto</a>
     <a href="#contact" onclick="closeMobileMenu()" class="bg-primary-container text-on-primary-container font-headline uppercase tracking-[0.05em] font-bold text-lg px-10 py-4 mt-4">
       OR&Ccedil;AMENTO
@@ -421,6 +463,29 @@
           <a href="#projects" class="magnetic-btn border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-white/10 transition-colors text-center">
             VER PROJETOS
           </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div id="heroBadges" class="flex flex-wrap items-center gap-3 md:gap-5 mt-8 md:mt-10 opacity-0">
+          <div class="flex items-center gap-2 text-xs md:text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-tertiary text-base" style="font-variation-settings:'FILL' 1">bolt</span>
+            <span class="font-label uppercase tracking-widest">Resposta &lt; 24h</span>
+          </div>
+          <span class="text-white/10">|</span>
+          <div class="flex items-center gap-2 text-xs md:text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-tertiary text-base" style="font-variation-settings:'FILL' 1">request_quote</span>
+            <span class="font-label uppercase tracking-widest">Or&ccedil;amento gr&aacute;tis</span>
+          </div>
+          <span class="text-white/10">|</span>
+          <div class="flex items-center gap-2 text-xs md:text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-tertiary text-base" style="font-variation-settings:'FILL' 1">verified_user</span>
+            <span class="font-label uppercase tracking-widest">Seguro RC ativo</span>
+          </div>
+          <span class="text-white/10 hidden md:inline">|</span>
+          <div class="hidden md:flex items-center gap-2 text-xs md:text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-tertiary text-base" style="font-variation-settings:'FILL' 1">workspace_premium</span>
+            <span class="font-label uppercase tracking-widest">Garantia at&eacute; 10 anos</span>
+          </div>
         </div>
       </div>
 
@@ -518,6 +583,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">04 / SPORT</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Pavimentos Desportivos</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Pisos t&eacute;cnicos para campos, courts e pavilh&otilde;es. Ader&ecirc;ncia, amortecimento e durabilidade.</p>
+            <a href="pavimentos-desportivos.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -533,6 +599,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">05 / INDUSTRY</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Pavimentos Industriais</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Resinas e pavimentos cont&iacute;nuos para pavilh&otilde;es, armaz&eacute;ns e cargas mec&acirc;nicas elevadas.</p>
+            <a href="pavimentos-industriais.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -548,6 +615,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">06 / MICRO</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Microcimento</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Acabamento cont&iacute;nuo e moderno em pavimentos e paredes. Est&eacute;tica premium, alta resist&ecirc;ncia.</p>
+            <a href="microcimento.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -563,6 +631,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">07 / WATER</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Impermeabiliza&ccedil;&atilde;o</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Coberturas, terra&ccedil;os, varandas e funda&ccedil;&otilde;es. Prote&ccedil;&atilde;o total contra infiltra&ccedil;&otilde;es.</p>
+            <a href="impermeabilizacao.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -578,8 +647,94 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">08 / TURF</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Relva Artificial</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Campos, jardins e zonas exteriores. Est&eacute;tica natural sem manuten&ccedil;&atilde;o exigente.</p>
+            <a href="relva-artificial.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ==================== CALCULADORA ORÇAMENTO ==================== -->
+    <section id="calc" class="py-20 md:py-32 px-6 md:px-12 bg-surface-container-lowest overflow-hidden">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="section-label text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">Estimativa Imediata</span>
+          <h2 class="section-title font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter mb-6 leading-none">
+            QUANTO CUSTA <br /><span class="text-primary-container">A SUA OBRA?</span>
+          </h2>
+          <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-6 max-w-lg">Estimativa por gama em 30 segundos. Valor final s&oacute; ap&oacute;s visita t&eacute;cnica &mdash; sem surpresas, sem letras pequenas.</p>
+          <div class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-tertiary">
+            <span class="material-symbols-outlined text-base">info</span>
+            Valores indicativos baseados em obras realizadas em 2025/2026
+          </div>
+        </div>
+
+        <div class="bg-surface p-6 md:p-8 border border-white/5">
+          <div class="space-y-5">
+            <div>
+              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2 block">Tipo de obra</label>
+              <select id="calcService" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-3">
+                <option value="micro|60|120">Microcimento</option>
+                <option value="industrial|18|45">Pavimento Industrial em Resina</option>
+                <option value="desportivo|22|55">Pavimento Desportivo</option>
+                <option value="imper|12|35">Impermeabiliza&ccedil;&atilde;o (cobertura/terra&ccedil;o)</option>
+                <option value="relva|18|32">Relva Artificial</option>
+                <option value="etics|35|65">Isolamento ETICS / Cappotto</option>
+                <option value="reab|45|90">Reabilita&ccedil;&atilde;o de Fachada</option>
+                <option value="remod|400|900">Remodela&ccedil;&atilde;o Integral</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2 block">&Aacute;rea aproximada (m&sup2;)</label>
+              <input id="calcArea" type="number" min="1" step="1" placeholder="Ex: 80" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-3" />
+            </div>
+            <div class="bg-surface-container-lowest p-5 border-l-2 border-primary-container">
+              <div class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-1">Estimativa indicativa</div>
+              <div id="calcResult" class="font-headline font-black text-3xl md:text-4xl text-white">&mdash;</div>
+              <div id="calcUnit" class="text-xs font-label uppercase tracking-widest text-tertiary mt-1">Insira a &aacute;rea para calcular</div>
+            </div>
+            <a id="calcCta" href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20detalhado." target="_blank" rel="noopener noreferrer" class="block bg-[#25D366] text-white text-center py-4 font-headline font-bold uppercase tracking-widest hover:bg-[#20bd5a] transition-colors">
+              Pedir or&ccedil;amento detalhado
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ANTES / DEPOIS ==================== -->
+    <section id="ba" class="py-20 md:py-32 px-6 md:px-12 bg-background overflow-hidden">
+      <div class="mb-12 md:mb-16">
+        <span class="section-label text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block">Transforma&ccedil;&otilde;es</span>
+        <h2 class="section-title font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter">Antes / Depois</h2>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <div id="baWrap" class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container select-none">
+          <img src="public/predio.webp" alt="Fachada antes da intervenção" class="absolute inset-0 w-full h-full object-cover grayscale" loading="lazy" />
+          <div id="baAfter" class="absolute inset-0 overflow-hidden" style="width:50%">
+            <img src="public/predio2.webp" alt="Fachada depois da intervenção" class="absolute inset-0 w-full h-full object-cover" style="width:calc(100vw); max-width:1024px" loading="lazy" />
+          </div>
+          <div id="baSlider" class="absolute top-0 bottom-0 w-1 bg-primary-container cursor-ew-resize" style="left:50%; transform:translateX(-50%)">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-primary-container flex items-center justify-center shadow-2xl">
+              <span class="material-symbols-outlined text-on-primary-container">drag_indicator</span>
+            </div>
+          </div>
+          <div class="absolute top-4 left-4 px-3 py-1.5 bg-background/80 backdrop-blur text-tertiary font-label text-xs uppercase tracking-widest">Antes</div>
+          <div class="absolute top-4 right-4 px-3 py-1.5 bg-primary-container/90 text-on-primary-container font-label text-xs uppercase tracking-widest font-bold">Depois</div>
+        </div>
+        <p class="text-center text-on-surface-variant text-sm mt-6 font-label uppercase tracking-widest">Arraste para comparar &mdash; condom&iacute;nio em Amadora, reabilita&ccedil;&atilde;o integral</p>
+      </div>
+    </section>
+
+    <!-- ==================== CTA STRIP ==================== -->
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-primary-container/10 border-y border-primary-container/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter text-white">Pediu or&ccedil;amento? <span class="text-primary-container">Resposta em 24h.</span></h3>
+          <p class="text-on-surface-variant text-sm mt-1 font-label uppercase tracking-widest">Visita t&eacute;cnica gr&aacute;tis &bull; Sem compromisso</p>
+        </div>
+        <a href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 md:px-10 py-4 md:py-5 font-headline font-bold uppercase tracking-widest hover:bg-[#20bd5a] transition-colors flex items-center gap-3 whitespace-nowrap">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar agora
+        </a>
       </div>
     </section>
 
@@ -893,6 +1048,74 @@
       </div>
     </section>
 
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="py-20 md:py-32 px-6 md:px-12 bg-background overflow-hidden">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 md:mb-16 text-center">
+          <span class="section-label text-primary font-label text-sm tracking-[0.2em] uppercase mb-4 block" style="display:inline-block">D&uacute;vidas Frequentes</span>
+          <h2 class="section-title font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter">Perguntas &amp; Respostas</h2>
+        </div>
+        <div class="space-y-3">
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Fazem or&ccedil;amento gratuito?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Sim. Or&ccedil;amento e visita t&eacute;cnica gratuitos em todo o distrito de Lisboa e Set&uacute;bal, sem compromisso. Para obras fora desta &aacute;rea, definimos o melhor formato consigo.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Qual o prazo de resposta?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Respondemos a todos os pedidos em menos de 24 horas &uacute;teis, via WhatsApp, telefone ou e-mail.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Em que zonas trabalham?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Lisboa, Amadora, Oeiras, Cascais, Sintra, Set&uacute;bal e Margem Sul. Para obras de maior dimens&atilde;o, deslocamo-nos a todo o continente.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">T&ecirc;m seguro de responsabilidade civil?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Sim. Todas as obras s&atilde;o cobertas por seguro de responsabilidade civil profissional e os t&eacute;cnicos t&ecirc;m certifica&ccedil;&atilde;o de trabalhos em altura (IRATA/equivalente).</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Que garantia oferecem?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">At&eacute; 10 anos de garantia em sistemas de isolamento e impermeabiliza&ccedil;&atilde;o, conforme o material aplicado. M&iacute;nimo de 2 anos em todos os outros servi&ccedil;os.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Quanto custa microcimento por m&sup2;?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Microcimento varia tipicamente entre 60 e 120 &euro;/m&sup2;, dependendo da base, prepara&ccedil;&atilde;o, acabamento e &aacute;rea total. O or&ccedil;amento exato &eacute; sempre dado ap&oacute;s visita.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Quanto custa um pavimento industrial em resina?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Pavimentos industriais em resina oscilam entre 18 e 45 &euro;/m&sup2; consoante carga mec&acirc;nica, espessura e tr&aacute;fego previsto.</div>
+          </details>
+          <details class="faq-item group bg-surface-container border-l-2 border-primary-container/40 hover:border-primary-container transition-colors">
+            <summary class="cursor-pointer list-none p-5 md:p-6 flex items-center justify-between gap-4">
+              <span class="font-headline font-bold text-base md:text-lg text-white uppercase">Trabalham com administradores de condom&iacute;nio e seguros?</span>
+              <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-45">add</span>
+            </summary>
+            <div class="px-5 md:px-6 pb-5 md:pb-6 text-on-surface-variant leading-relaxed">Sim. Emitimos relat&oacute;rios t&eacute;cnicos, fotorrelat&oacute;rios e faturas em nome de administra&ccedil;&otilde;es e seguradoras. Acompanhamos todo o processo burocr&aacute;tico.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== PARTNERS / CERTIFICATIONS ==================== -->
     <section id="partners" class="py-16 md:py-20 px-6 md:px-12 bg-background border-y border-white/5">
       <div class="max-w-5xl mx-auto">
@@ -971,41 +1194,92 @@
         </div>
 
         <div class="lg:w-2/3 contact-right bg-surface p-8 md:p-12 border border-white/5">
+          <!-- Progress -->
+          <div class="flex items-center justify-between mb-8" id="formProgress">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="step-dot w-8 h-8 flex items-center justify-center bg-primary-container text-on-primary-container font-headline font-bold text-sm" data-step="1">1</div>
+              <span class="text-xs font-label uppercase tracking-widest text-white hidden sm:inline">Servi&ccedil;o</span>
+            </div>
+            <div class="h-px flex-1 bg-white/10 mx-2"></div>
+            <div class="flex items-center gap-3 flex-1">
+              <div class="step-dot w-8 h-8 flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm" data-step="2">2</div>
+              <span class="text-xs font-label uppercase tracking-widest text-on-surface-variant hidden sm:inline">Detalhes</span>
+            </div>
+            <div class="h-px flex-1 bg-white/10 mx-2"></div>
+            <div class="flex items-center gap-3 flex-1">
+              <div class="step-dot w-8 h-8 flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm" data-step="3">3</div>
+              <span class="text-xs font-label uppercase tracking-widest text-on-surface-variant hidden sm:inline">Contacto</span>
+            </div>
+          </div>
+
           <form id="contactForm" class="space-y-6 md:space-y-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- Step 1 -->
+            <div class="form-step" data-step="1">
               <div class="form-field space-y-2">
-                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Nome Completo *</label>
-                <input id="fieldName" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="text" placeholder="O seu nome" required />
-                <div class="field-error-msg">Por favor insira o seu nome</div>
+                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Que servi&ccedil;o procura?</label>
+                <select id="fieldService" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4">
+                  <option>Isolamento de Fachadas</option>
+                  <option>Remodela&ccedil;&atilde;o Geral</option>
+                  <option>Reabilita&ccedil;&atilde;o Estrutural</option>
+                  <option>Pavimentos Desportivos</option>
+                  <option>Pavimentos Industriais</option>
+                  <option>Microcimento</option>
+                  <option>Impermeabiliza&ccedil;&atilde;o</option>
+                  <option>Relva Artificial</option>
+                  <option>Trabalhos Verticais</option>
+                  <option>Outro</option>
+                </select>
               </div>
-              <div class="form-field space-y-2">
-                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Contacto Telef&oacute;nico *</label>
-                <input id="fieldPhone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="tel" placeholder="+351" required />
-                <div class="field-error-msg">Por favor insira um contacto v&aacute;lido</div>
+              <button type="button" data-next="2" class="form-next magnetic-btn bg-primary-container text-on-primary-container px-10 py-4 font-headline font-bold uppercase tracking-widest hover:bg-primary transition-colors mt-6">Continuar &rarr;</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step hidden" data-step="2">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="form-field space-y-2">
+                  <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">&Aacute;rea (m&sup2;)</label>
+                  <input id="fieldArea" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="number" min="1" placeholder="Ex: 120" />
+                </div>
+                <div class="form-field space-y-2">
+                  <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Zona / Cidade</label>
+                  <input id="fieldZone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="text" placeholder="Ex: Lisboa, Amadora..." />
+                </div>
+              </div>
+              <div class="form-field space-y-2 mt-6">
+                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Descri&ccedil;&atilde;o do projeto</label>
+                <textarea id="fieldMessage" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" rows="3" placeholder="O que precisa fazer?"></textarea>
+              </div>
+              <div class="flex gap-4 mt-6">
+                <button type="button" data-prev="1" class="form-prev border border-white/10 text-white px-6 py-4 font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">&larr; Voltar</button>
+                <button type="button" data-next="3" class="form-next flex-1 magnetic-btn bg-primary-container text-on-primary-container px-10 py-4 font-headline font-bold uppercase tracking-widest hover:bg-primary transition-colors">Continuar &rarr;</button>
               </div>
             </div>
-            <div class="form-field space-y-2">
-              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Tipo de Servi&ccedil;o</label>
-              <select id="fieldService" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4">
-                <option>Isolamento de Fachadas</option>
-                <option>Remodela&ccedil;&atilde;o Geral</option>
-                <option>Reabilita&ccedil;&atilde;o Estrutural</option>
-                <option>Pavimentos Desportivos</option>
-                <option>Pavimentos Industriais</option>
-                <option>Microcimento</option>
-                <option>Impermeabiliza&ccedil;&atilde;o</option>
-                <option>Relva Artificial</option>
-                <option>Trabalhos Verticais</option>
-                <option>Outro</option>
-              </select>
+
+            <!-- Step 3 -->
+            <div class="form-step hidden" data-step="3">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="form-field space-y-2">
+                  <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Nome *</label>
+                  <input id="fieldName" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="text" placeholder="O seu nome" required />
+                  <div class="field-error-msg">Por favor insira o seu nome</div>
+                </div>
+                <div class="form-field space-y-2">
+                  <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Telefone *</label>
+                  <input id="fieldPhone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" type="tel" placeholder="+351" required />
+                  <div class="field-error-msg">Por favor insira um contacto v&aacute;lido</div>
+                </div>
+              </div>
+              <label class="flex items-start gap-3 mt-6 text-xs text-on-surface-variant cursor-pointer">
+                <input id="fieldConsent" type="checkbox" class="mt-1 accent-primary-container" required />
+                <span>Autorizo o tratamento dos meus dados para resposta a este pedido, nos termos da <a href="privacidade.html" class="text-primary underline">Pol&iacute;tica de Privacidade</a>.</span>
+              </label>
+              <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                <button type="button" data-prev="2" class="form-prev border border-white/10 text-white px-6 py-4 font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">&larr; Voltar</button>
+                <button class="form-submit magnetic-btn flex-1 bg-primary-container text-on-primary-container px-10 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-primary transition-colors" type="submit">
+                  ENVIAR SOLICITA&Ccedil;&Atilde;O
+                </button>
+              </div>
             </div>
-            <div class="form-field space-y-2">
-              <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Mensagem / Descri&ccedil;&atilde;o do Projeto</label>
-              <textarea id="fieldMessage" class="w-full bg-surface-container-lowest border-0 border-b-2 border-white/10 focus:ring-0 focus:border-primary-container text-white p-4" rows="4" placeholder="Descreva o seu projeto..."></textarea>
-            </div>
-            <button class="form-submit magnetic-btn bg-primary-container text-on-primary-container px-10 md:px-12 py-4 md:py-5 font-headline font-bold text-base md:text-lg uppercase tracking-widest hover:bg-primary transition-colors w-full md:w-auto" type="submit">
-              ENVIAR SOLICITA&Ccedil;&Atilde;O
-            </button>
           </form>
 
           <!-- Success State -->
@@ -1077,6 +1351,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- Exit Intent Popup -->
+  <div id="exitOverlay" class="fixed inset-0 bg-background/85 backdrop-blur-sm z-[100] hidden items-center justify-center px-6">
+    <div class="bg-surface border border-primary-container/30 max-w-lg w-full p-8 md:p-10 relative">
+      <button id="exitClose" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Fechar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <span class="text-primary font-label text-xs tracking-[0.2em] uppercase mb-3 block">Antes de sair</span>
+      <h3 class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter text-white mb-4 leading-tight">VISITA T&Eacute;CNICA <span class="text-primary-container">GR&Aacute;TIS</span> em Lisboa e arredores.</h3>
+      <p class="text-on-surface-variant mb-6 leading-relaxed">Diagn&oacute;stico no local, or&ccedil;amento detalhado e sem compromisso. Marcamos em 24h.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20uma%20visita%20t%C3%A9cnica%20gratuita." target="_blank" rel="noopener noreferrer" class="flex-1 bg-[#25D366] text-white text-center py-4 font-headline font-bold uppercase tracking-widest hover:bg-[#20bd5a] transition-colors">
+          Marcar agora
+        </a>
+        <button id="exitDismiss" class="border border-white/10 text-on-surface-variant px-6 py-4 font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-sm">N&atilde;o obrigado</button>
+      </div>
+    </div>
+  </div>
 
   <!-- RGPD Cookie Banner -->
   <div id="cookieBanner" class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -1163,6 +1455,10 @@
       initFeatured();
       initProcess();
       initContact();
+      initMultiStep();
+      initCalc();
+      initBeforeAfter();
+      initExitIntent();
       initFloatingWa();
       initBackToTop();
       initScrollProgress();
@@ -1311,6 +1607,11 @@
       tl.to('#heroCtas', {
         opacity: 1, y: 0, duration: 0.6, ease: "power2.out"
       }, "-=0.3");
+
+      // Hero trust badges
+      tl.to('#heroBadges', {
+        opacity: 1, y: 0, duration: 0.6, ease: "power2.out"
+      }, "-=0.2");
 
       // Monolith text
       tl.to('#heroMonolith', {
@@ -1739,6 +2040,10 @@
         waText += `*Nome:* ${formName}\n`;
         waText += `*Telefone:* ${formPhone}\n`;
         waText += `*Serviço:* ${formService}\n`;
+        const formArea = (document.getElementById('fieldArea')?.value || '').trim();
+        const formZone = (document.getElementById('fieldZone')?.value || '').trim();
+        if (formArea) waText += `*Área:* ${formArea} m²\n`;
+        if (formZone) waText += `*Zona:* ${formZone}\n`;
         if (formMsg) waText += `*Mensagem:* ${formMsg}\n`;
 
         const waUrl = `https://wa.me/351966416696?text=${encodeURIComponent(waText)}`;
@@ -1790,6 +2095,129 @@
           });
         });
       }
+    }
+
+    // ========================
+    //  21b. MULTI-STEP FORM
+    // ========================
+    function initMultiStep() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      const steps = form.querySelectorAll('.form-step');
+      const dots = document.querySelectorAll('#formProgress .step-dot');
+      function go(n) {
+        steps.forEach(s => s.classList.toggle('hidden', s.dataset.step !== String(n)));
+        dots.forEach(d => {
+          const active = Number(d.dataset.step) <= n;
+          d.classList.toggle('bg-primary-container', active);
+          d.classList.toggle('text-on-primary-container', active);
+          d.classList.toggle('bg-surface-container-highest', !active);
+          d.classList.toggle('text-on-surface-variant', !active);
+        });
+      }
+      form.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => go(Number(b.dataset.next))));
+      form.querySelectorAll('[data-prev]').forEach(b => b.addEventListener('click', () => go(Number(b.dataset.prev))));
+    }
+
+    // ========================
+    //  21c. CALCULADORA ORÇAMENTO
+    // ========================
+    function initCalc() {
+      const svc = document.getElementById('calcService');
+      const area = document.getElementById('calcArea');
+      const result = document.getElementById('calcResult');
+      const unit = document.getElementById('calcUnit');
+      const cta = document.getElementById('calcCta');
+      if (!svc || !area) return;
+      function fmt(n) { return new Intl.NumberFormat('pt-PT', { maximumFractionDigits: 0 }).format(Math.round(n)); }
+      function update() {
+        const [key, lo, hi] = svc.value.split('|');
+        const a = parseFloat(area.value);
+        if (!a || a <= 0) {
+          result.textContent = '—';
+          unit.textContent = 'Insira a área para calcular';
+          return;
+        }
+        const remod = key === 'remod';
+        const low = remod ? a * Number(lo) / 10 : a * Number(lo);
+        const high = remod ? a * Number(hi) / 10 : a * Number(hi);
+        result.textContent = `${fmt(low)} € — ${fmt(high)} €`;
+        unit.textContent = `Estimativa para ${a} m² · valor final após visita técnica`;
+        const label = svc.options[svc.selectedIndex].text;
+        const msg = `Olá, gostaria de orçamento detalhado para ${label} (~${a} m²). Estimativa indicativa: ${fmt(low)}€-${fmt(high)}€.`;
+        cta.href = `https://wa.me/351966416696?text=${encodeURIComponent(msg)}`;
+      }
+      svc.addEventListener('change', update);
+      area.addEventListener('input', update);
+    }
+
+    // ========================
+    //  21d. ANTES / DEPOIS slider
+    // ========================
+    function initBeforeAfter() {
+      const wrap = document.getElementById('baWrap');
+      const after = document.getElementById('baAfter');
+      const slider = document.getElementById('baSlider');
+      if (!wrap || !after || !slider) return;
+      let dragging = false;
+      function setPos(clientX) {
+        const rect = wrap.getBoundingClientRect();
+        let pct = ((clientX - rect.left) / rect.width) * 100;
+        pct = Math.max(2, Math.min(98, pct));
+        after.style.width = pct + '%';
+        slider.style.left = pct + '%';
+      }
+      const start = e => { dragging = true; e.preventDefault(); };
+      const move = e => {
+        if (!dragging) return;
+        const x = e.touches ? e.touches[0].clientX : e.clientX;
+        setPos(x);
+      };
+      const end = () => { dragging = false; };
+      slider.addEventListener('mousedown', start);
+      wrap.addEventListener('mousedown', start);
+      window.addEventListener('mousemove', move);
+      window.addEventListener('mouseup', end);
+      slider.addEventListener('touchstart', start, { passive: false });
+      window.addEventListener('touchmove', move, { passive: true });
+      window.addEventListener('touchend', end);
+    }
+
+    // ========================
+    //  21e. EXIT INTENT
+    // ========================
+    function initExitIntent() {
+      const overlay = document.getElementById('exitOverlay');
+      const closeBtn = document.getElementById('exitClose');
+      const dismiss = document.getElementById('exitDismiss');
+      if (!overlay) return;
+      let shown = sessionStorage.getItem('pcwork_exit_shown') === '1';
+      function show() {
+        if (shown) return;
+        shown = true;
+        sessionStorage.setItem('pcwork_exit_shown', '1');
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+      }
+      function hide() {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+      }
+      document.addEventListener('mouseout', e => {
+        if (!e.relatedTarget && e.clientY < 10) show();
+      });
+      // Fallback no mobile: após 45s + scroll-up
+      let lastY = window.scrollY;
+      setTimeout(() => {
+        window.addEventListener('scroll', () => {
+          const y = window.scrollY;
+          if (y < lastY - 100 && y > 400) show();
+          lastY = y;
+        }, { passive: true });
+      }, 45000);
+      closeBtn?.addEventListener('click', hide);
+      dismiss?.addEventListener('click', hide);
+      overlay.addEventListener('click', e => { if (e.target === overlay) hide(); });
     }
 
     // ========================

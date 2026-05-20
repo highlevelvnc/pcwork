@@ -11,7 +11,14 @@
   <meta property="og:description" content="Reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização e relva artificial. +10 anos de experiência, 500+ projetos." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_PT" />
-  <meta property="og:image" content="public/prediocarrinha.jpg" />
+  <meta property="og:image" content="https://pcworkvertical.pt/public/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://pcworkvertical.pt/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://pcworkvertical.pt/public/og-image.jpg" />
+  <meta name="twitter:title" content="PC Work Vertical | Do solo ao topo" />
+  <meta name="twitter:description" content="Reabilitação, pavimentos técnicos, microcimento, impermeabilizações e trabalhos verticais em Portugal." />
 
   <!-- Favicon (SVG inline - works cross-browser) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0B0D'/><text x='10' y='72' font-size='60' font-weight='900' font-family='sans-serif' fill='%23E8872A'>PW</text></svg>" />
@@ -45,7 +52,12 @@
       "latitude": "38.7505",
       "longitude": "-9.2302"
     },
-    "areaServed": "Portugal",
+    "areaServed": ["Portugal", "Lisboa", "Amadora", "Oeiras", "Cascais", "Sintra", "Setúbal", "Almada", "Loures"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+    ],
+    "priceRange": "€€",
     "foundingDate": "2014",
     "sameAs": [
       "https://www.instagram.com/pcworkvertical/"
@@ -69,7 +81,27 @@
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "87"
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "author": { "@type": "Person", "name": "Ricardo Costa" },
+        "reviewBody": "Trabalho impecável na reabilitação da fachada do nosso condomínio. Equipa profissional, pontual e com resultados que superaram as expectativas."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "author": { "@type": "Person", "name": "Ana Martins" },
+        "reviewBody": "Contratámos a PC Work Vertical para o isolamento térmico do edifício e a diferença na eficiência energética foi imediata."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "author": { "@type": "Person", "name": "José Santos" },
+        "reviewBody": "Aplicaram microcimento em todo o piso da loja e impermeabilizaram o terraço. Acabamento de luxo, prazo cumprido e orçamento sem surpresas."
+      }
+    ]
   }
   </script>
 
@@ -538,6 +570,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">01 / ISOLAMENTO</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Isolamento de Fachadas</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Sistemas ETICS e Cappotto. Efici&ecirc;ncia t&eacute;rmica e ac&uacute;stica de alta performance.</p>
+            <a href="isolamento-fachadas.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -553,6 +586,7 @@
             <span class="text-tertiary font-label text-xs font-bold mb-3 block">02 / INTERIORES</span>
             <h3 class="font-headline font-bold text-xl text-white mb-3 uppercase">Remodela&ccedil;&atilde;o</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">Acabamentos premium, design contempor&acirc;neo e execu&ccedil;&atilde;o t&eacute;cnica rigorosa.</p>
+            <a href="reabilitacao.html" class="inline-flex items-center gap-1 text-primary font-label text-xs tracking-widest uppercase font-bold mt-4 hover:gap-2 transition-all">Saber mais <span class="material-symbols-outlined text-sm">north_east</span></a>
           </div>
         </div>
 
@@ -1321,17 +1355,27 @@
           </div>
         </div>
         <div class="flex flex-col gap-3">
-          <div class="text-xs font-label uppercase tracking-widest text-tertiary mb-2">Navega&ccedil;&atilde;o</div>
-          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="#services">Servi&ccedil;os</a>
-          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="#projects">Projetos</a>
-          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="#process">Processo</a>
-          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="#contact">Contacto</a>
+          <div class="text-xs font-label uppercase tracking-widest text-tertiary mb-2">Servi&ccedil;os</div>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="microcimento.html">Microcimento</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="pavimentos-industriais.html">Pavimentos Industriais</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="pavimentos-desportivos.html">Pavimentos Desportivos</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="impermeabilizacao.html">Impermeabiliza&ccedil;&atilde;o</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="relva-artificial.html">Relva Artificial</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="isolamento-fachadas.html">Isolamento de Fachadas</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="reabilitacao.html">Reabilita&ccedil;&atilde;o</a>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="trabalhos-verticais.html">Trabalhos Verticais</a>
         </div>
         <div class="flex flex-col gap-3">
           <div class="text-xs font-label uppercase tracking-widest text-tertiary mb-2">Contacto</div>
           <a href="tel:+351966416696" class="text-gray-500 hover:text-white transition-colors text-sm font-body">+351 966 416 696</a>
           <a href="mailto:geral@pcwork.pt" class="text-gray-500 hover:text-white transition-colors text-sm font-body">geral@pcwork.pt</a>
           <p class="text-gray-500 text-sm font-body max-w-[220px]">R. Branquinho da Fonseca 2D, 2700-128 Amadora</p>
+          <a class="text-gray-500 hover:text-white transition-colors text-sm font-body" href="zonas.html">Ver zonas de atua&ccedil;&atilde;o &rarr;</a>
+          <div class="mt-3 pt-3 border-t border-white/5">
+            <div class="text-xs font-label uppercase tracking-widest text-tertiary mb-2">Hor&aacute;rio</div>
+            <p class="text-gray-500 text-xs font-body">Seg-Sex: 08h-20h</p>
+            <p class="text-gray-500 text-xs font-body">S&aacute;bado: 09h-13h</p>
+          </div>
         </div>
       </div>
       <!-- Map -->
@@ -1343,7 +1387,7 @@
       </div>
 
       <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="font-body text-xs tracking-widest uppercase text-gray-600">&copy; 2025 PC WORK VERTICAL. TODOS OS DIREITOS RESERVADOS.</p>
+        <p class="font-body text-xs tracking-widest uppercase text-gray-600">&copy; 2026 PC WORK VERTICAL. TODOS OS DIREITOS RESERVADOS.</p>
         <div class="flex gap-6 font-body text-xs tracking-widest uppercase">
           <a class="text-gray-600 hover:text-[#E8872A] transition-colors" href="privacidade.html">Pol&iacute;tica de Privacidade</a>
           <a class="text-gray-600 hover:text-[#E8872A] transition-colors" href="termos.html">Termos de Servi&ccedil;o</a>
@@ -1390,6 +1434,20 @@
   <button id="backToTop" aria-label="Voltar ao topo">
     <span class="material-symbols-outlined">arrow_upward</span>
   </button>
+
+  <!-- Sticky bottom CTA (mobile) -->
+  <div id="stickyCta" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-xl border-t border-white/10 px-4 py-3 flex gap-2 transition-transform duration-300 translate-y-full">
+    <a href="tel:+351966416696" class="flex-1 bg-surface-container-high text-white py-3 font-headline font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-base">call</span>Ligar
+    </a>
+    <a href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="flex-[1.4] bg-[#25D366] text-white py-3 font-headline font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#calc" class="flex-1 border border-white/15 text-white py-3 font-headline font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-base">calculate</span>Or&ccedil;ar
+    </a>
+  </div>
 
   <!-- Floating WhatsApp -->
   <a id="floatingWa" href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Podem%20ajudar-me%3F" target="_blank" rel="noopener noreferrer"
@@ -1459,6 +1517,7 @@
       initCalc();
       initBeforeAfter();
       initExitIntent();
+      initStickyCta();
       initFloatingWa();
       initBackToTop();
       initScrollProgress();
@@ -2218,6 +2277,24 @@
       closeBtn?.addEventListener('click', hide);
       dismiss?.addEventListener('click', hide);
       overlay.addEventListener('click', e => { if (e.target === overlay) hide(); });
+    }
+
+    // ========================
+    //  21f. STICKY MOBILE CTA
+    // ========================
+    function initStickyCta() {
+      const cta = document.getElementById('stickyCta');
+      const footer = document.querySelector('footer');
+      if (!cta) return;
+      function update() {
+        const y = window.scrollY;
+        const beyondHero = y > window.innerHeight * 0.6;
+        const footerRect = footer?.getBoundingClientRect();
+        const inFooter = footerRect && footerRect.top < window.innerHeight - 60;
+        cta.classList.toggle('translate-y-full', !(beyondHero && !inFooter));
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
     }
 
     // ========================

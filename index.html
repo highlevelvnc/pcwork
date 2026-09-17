@@ -1323,8 +1323,8 @@
             <div class="check-circle">
               <span class="material-symbols-outlined">check</span>
             </div>
-            <h3 class="text-white font-headline font-bold text-2xl uppercase">Or&ccedil;amento Enviado!</h3>
-            <p class="text-on-surface-variant max-w-sm">A redirecionar para o WhatsApp. A nossa equipa ir&aacute; responder o mais brevemente poss&iacute;vel.</p>
+            <h3 class="text-white font-headline font-bold text-2xl uppercase">Falta s&oacute; enviar no WhatsApp</h3>
+            <p class="text-on-surface-variant max-w-sm">Abrimos o WhatsApp com o seu pedido: carregue em enviar para o recebermos. Se n&atilde;o abriu, <a id="formWaLink" href="https://wa.me/351966416696" target="_blank" rel="noopener" class="text-white underline">toque aqui</a>.</p>
             <button id="formReset" class="magnetic-btn border border-white/10 text-white px-8 py-3 font-headline font-bold text-sm uppercase tracking-widest hover:bg-white/5 transition-colors mt-4">
               ENVIAR NOVA MENSAGEM
             </button>
@@ -2110,6 +2110,12 @@
 
         const waUrl = `https://wa.me/351966416696?text=${encodeURIComponent(waText)}`;
 
+        // Abrir já, dentro do clique: o Safari (e qualquer browser no iPhone) bloqueia window.open
+        // chamado depois de animações ou timers, e o pedido perdia-se.
+        window.open(waUrl, '_blank');
+        const waLink = document.getElementById('formWaLink');
+        if (waLink) waLink.href = waUrl;
+
         // Success animation then redirect
         gsap.to(form, {
           opacity: 0, y: -20, duration: 0.4, ease: "power2.in",
@@ -2130,11 +2136,6 @@
             gsap.from(resetBtn, {
               opacity: 0, y: 10, duration: 0.5, delay: 0.6, ease: "power2.out"
             });
-
-            // Open WhatsApp after animation
-            setTimeout(() => {
-              window.open(waUrl, '_blank');
-            }, 1200);
           }
         });
       });

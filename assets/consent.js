@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var GA4_ID = "";
+  var GA4_ID = "G-DCLGX91DMY";
 
   var STORE_KEY = "pcwork_consent_v2"; // "granted" | "denied"
   var doc = document;

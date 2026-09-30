@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt">
+<html class="dark" lang="pt-PT">
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>PC Work Vertical | Reabilitação, Pavimentos Técnicos & Trabalhos Verticais</title>
-  <meta name="description" content="Especialistas em reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização, relva artificial e trabalhos verticais em Portugal. Engenharia de precisão do solo ao topo do edifício." />
+  <title>Reabilitação e Trabalhos Verticais | PC Work Vertical</title>
+  <meta name="description" content="Reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização, relva artificial e trabalhos verticais em Lisboa e Setúbal." />
   <link rel="canonical" href="https://pcworkvertical.pt/" />
 
   <!-- Open Graph -->
@@ -12,12 +12,12 @@
   <meta property="og:description" content="Reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização e relva artificial. +10 anos de experiência, 500+ projetos." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_PT" />
-  <meta property="og:image" content="https://pcworkvertical.pt/public/og-image.jpg" />
+  <meta property="og:image" content="https://pcworkvertical.pt/public/og-fachada.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://pcworkvertical.pt/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://pcworkvertical.pt/public/og-image.jpg" />
+  <meta name="twitter:image" content="https://pcworkvertical.pt/public/og-fachada.jpg" />
   <meta name="twitter:title" content="PC Work Vertical | Do solo ao topo" />
   <meta name="twitter:description" content="Reabilitação, pavimentos técnicos, microcimento, impermeabilizações e trabalhos verticais em Portugal." />
 
@@ -31,76 +31,160 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
 
-  <!-- Schema.org LocalBusiness -->
+  <!-- Schema.org HomeAndConstructionBusiness + WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "PC Work Vertical",
-    "description": "Reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização, relva artificial e trabalhos verticais em Portugal",
-    "url": "https://pcworkvertical.pt/",
-    "telephone": "+351966416696",
-    "email": "pcworkorcamentos@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "R. Branquinho da Fonseca 2D",
-      "addressLocality": "Amadora",
-      "postalCode": "2700-128",
-      "addressCountry": "PT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "38.7505",
-      "longitude": "-9.2302"
-    },
-    "areaServed": ["Portugal", "Lisboa", "Amadora", "Oeiras", "Cascais", "Sintra", "Setúbal", "Almada", "Loures"],
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
-    ],
-    "priceRange": "€€",
-    "foundingDate": "2014",
-    "sameAs": [
-      "https://www.instagram.com/pcworkvertical/"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços PC Work Vertical",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Isolamento de Fachadas", "description": "Sistemas ETICS e Cappotto para eficiência térmica e acústica." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remodelação de Interiores", "description": "Acabamentos premium e execução técnica para projetos residenciais e comerciais." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reabilitação Estrutural", "description": "Restauro estético e funcional de edifícios com materiais certificados." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pavimentos Desportivos", "description": "Pisos técnicos para campos, courts e pavilhões." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pavimentos Industriais", "description": "Resinas e pavimentos contínuos para pavilhões e armazéns." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Microcimento", "description": "Acabamento contínuo de alta resistência em pavimentos e paredes." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilização", "description": "Coberturas, terraços, varandas e fundações contra infiltrações." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Relva Artificial", "description": "Aplicação em campos, jardins e zonas exteriores." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trabalhos Verticais", "description": "Intervenções por acesso de corda em fachadas e estruturas em altura." } }
-      ]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "87"
-    },
-    "review": [
+    "@graph": [
       {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Ricardo Costa" },
-        "reviewBody": "Trabalho impecável na reabilitação da fachada do nosso condomínio. Equipa profissional, pontual e com resultados que superaram as expectativas."
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://pcworkvertical.pt/#business",
+        "name": "PC Work Vertical",
+        "description": "Reabilitação de fachadas, pavimentos desportivos e industriais, microcimento, impermeabilização, relva artificial e trabalhos verticais em Portugal",
+        "url": "https://pcworkvertical.pt/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pcworkvertical.pt/logo.png"
+        },
+        "image": [
+          "https://pcworkvertical.pt/public/og-fachada.jpg"
+        ],
+        "telephone": "+351966416696",
+        "email": "pcworkorcamentos@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Branquinho da Fonseca 2D",
+          "addressLocality": "Amadora",
+          "postalCode": "2700-128",
+          "addressCountry": "PT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "38.7505",
+          "longitude": "-9.2302"
+        },
+        "areaServed": [
+          "Portugal",
+          "Lisboa",
+          "Amadora",
+          "Oeiras",
+          "Cascais",
+          "Sintra",
+          "Setúbal",
+          "Almada",
+          "Loures"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/pcworkvertical/"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços PC Work Vertical",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Isolamento de Fachadas",
+                "description": "Sistemas ETICS e Cappotto para eficiência térmica e acústica."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Remodelação de Interiores",
+                "description": "Acabamentos premium e execução técnica para projetos residenciais e comerciais."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Reabilitação Estrutural",
+                "description": "Restauro estético e funcional de edifícios com materiais certificados."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pavimentos Desportivos",
+                "description": "Pisos técnicos para campos, courts e pavilhões."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pavimentos Industriais",
+                "description": "Resinas e pavimentos contínuos para pavilhões e armazéns."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Microcimento",
+                "description": "Acabamento contínuo de alta resistência em pavimentos e paredes."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Impermeabilização",
+                "description": "Coberturas, terraços, varandas e fundações contra infiltrações."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Relva Artificial",
+                "description": "Aplicação em campos, jardins e zonas exteriores."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Trabalhos Verticais",
+                "description": "Intervenções por acesso de corda em fachadas e estruturas em altura."
+              }
+            }
+          ]
+        }
       },
       {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Ana Martins" },
-        "reviewBody": "Contratámos a PC Work Vertical para o isolamento térmico do edifício e a diferença na eficiência energética foi imediata."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "José Santos" },
-        "reviewBody": "Aplicaram microcimento em todo o piso da loja e impermeabilizaram o terraço. Acabamento de luxo, prazo cumprido e orçamento sem surpresas."
+        "@type": "WebSite",
+        "@id": "https://pcworkvertical.pt/#website",
+        "url": "https://pcworkvertical.pt/",
+        "name": "PC Work Vertical",
+        "inLanguage": "pt-PT",
+        "publisher": {
+          "@id": "https://pcworkvertical.pt/#business"
+        }
       }
     ]
   }
@@ -197,6 +281,9 @@
     }
   </script>
   <style>
+    /* Evita overflow horizontal em mobile (clip, não hidden) */
+    html, body { overflow-x: clip; }
+
     /* ===== BASE ===== */
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
@@ -388,19 +475,11 @@
     .field-error-msg.visible {
       display: block;
     }
-
-    /* ===== COOKIE BANNER ===== */
-    #cookieBanner {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9992;
-      background: #141416; border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 1.25rem 1.5rem;
-      transform: translateY(100%);
-      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    #cookieBanner.visible {
-      transform: translateY(0);
-    }
   </style>
+  <meta property="og:site_name" content="PC Work Vertical" />
+  <meta property="og:image:alt" content="Fachada de edifício reabilitada pela PC Work Vertical" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script src="/assets/consent.js" defer></script>
 </head>
 
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
@@ -1395,6 +1474,7 @@
         <div class="flex flex-col gap-1"><p class="font-body text-xs tracking-widest uppercase text-gray-600">&copy; 2026 PC WORK VERTICAL. TODOS OS DIREITOS RESERVADOS.</p><a href="https://highlevelmkt.com/estudio" target="_blank" rel="noopener" class="text-gray-600 hover:text-primary transition-colors text-xs font-label uppercase tracking-widest">Site por highlevelmkt.com/estudio</a></div>
         <div class="flex gap-6 font-body text-xs tracking-widest uppercase">
           <a class="text-gray-600 hover:text-[#E8872A] transition-colors" href="privacidade.html">Pol&iacute;tica de Privacidade</a>
+        <a class="text-gray-600 hover:text-[#E8872A] transition-colors" href="#" data-cookie-prefs>Prefer&ecirc;ncias de cookies</a>
           <a class="text-gray-600 hover:text-[#E8872A] transition-colors" href="termos.html">Termos de Servi&ccedil;o</a>
         </div>
       </div>
@@ -1416,22 +1496,6 @@
         </a>
         <button id="exitDismiss" class="border border-white/10 text-on-surface-variant px-6 py-4 font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-colors text-sm">N&atilde;o obrigado</button>
       </div>
-    </div>
-  </div>
-
-  <!-- RGPD Cookie Banner -->
-  <div id="cookieBanner" class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p class="text-on-surface-variant text-sm font-body max-w-2xl">
-      Utilizamos cookies para melhorar a sua experi&ecirc;ncia. Ao continuar a navegar, concorda com a nossa
-      <a href="privacidade.html" class="text-primary underline underline-offset-2">Pol&iacute;tica de Privacidade</a>.
-    </p>
-    <div class="flex gap-3 shrink-0">
-      <button id="cookieReject" class="text-on-surface-variant text-sm font-headline font-bold uppercase tracking-widest px-5 py-2 border border-white/10 hover:bg-white/5 transition-colors">
-        Recusar
-      </button>
-      <button id="cookieAccept" class="bg-primary-container text-on-primary-container text-sm font-headline font-bold uppercase tracking-widest px-5 py-2 hover:bg-primary transition-colors">
-        Aceitar
-      </button>
     </div>
   </div>
 
@@ -1529,7 +1593,6 @@
       initTestimonials();
       initPartners();
       initFormValidation();
-      initCookieBanner();
       initMagneticButtons();
     }
 
@@ -2115,6 +2178,7 @@
         // Abrir já, dentro do clique: o Safari (e qualquer browser no iPhone) bloqueia window.open
         // chamado depois de animações ou timers, e o pedido perdia-se.
         window.open(waUrl, '_blank');
+        if (window.pcwTrack) window.pcwTrack('whatsapp_click', { cta_location: 'form_contact', link_url: 'https://wa.me/351966416696' });
         const waLink = document.getElementById('formWaLink');
         if (waLink) waLink.href = waUrl;
 
@@ -2301,31 +2365,6 @@
       }
       window.addEventListener('scroll', update, { passive: true });
       update();
-    }
-
-    // ========================
-    //  22. COOKIE BANNER (RGPD)
-    // ========================
-    function initCookieBanner() {
-      const banner = document.getElementById('cookieBanner');
-      const acceptBtn = document.getElementById('cookieAccept');
-      const rejectBtn = document.getElementById('cookieReject');
-      if (!banner) return;
-
-      // Check if already answered
-      if (localStorage.getItem('pcwork_cookies')) return;
-
-      // Show after 1.5s delay
-      setTimeout(() => banner.classList.add('visible'), 1500);
-
-      function closeBanner(consent) {
-        localStorage.setItem('pcwork_cookies', consent);
-        banner.classList.remove('visible');
-        setTimeout(() => banner.remove(), 600);
-      }
-
-      acceptBtn.addEventListener('click', () => closeBanner('accepted'));
-      rejectBtn.addEventListener('click', () => closeBanner('rejected'));
     }
 
     // ========================

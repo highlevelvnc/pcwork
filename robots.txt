@@ -1,4 +1,23 @@
+# PC Work Vertical — https://pcworkvertical.pt
+
 User-agent: *
+Allow: /
+Disallow: /code.html
+Disallow: /DESIGN.md
+
+# Motores de pesquisa e de IA autorizados explicitamente
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
 Allow: /
 Disallow: /code.html
 Disallow: /DESIGN.md

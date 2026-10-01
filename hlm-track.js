@@ -1,8 +1,11 @@
-/*! hlm-track v1 — tipo de contacto + origem do lead, sem dependências. HLM Marketing.
+/*! hlm-track v1.1 — tipo de contacto + origem do lead, sem dependências. HLM Marketing.
  *  - Tipo vem do próprio link: wa.me/api.whatsapp.com → whatsapp, tel: → phone, mailto: → email.
  *  - Origem: ads_google | ads_meta | seo | gbp | ia | social | direct | referral | email | other.
  *  - Primeiro toque guardado 90 dias em localStorage SÓ com analytics_storage concedido; sem consentimento só sessionStorage.
  *  - Envia eventos via gtag (o Consent Mode do site decide o que sai). Não guarda nem envia valores de click ids.
+ *  - v1.1: retirar o consentimento (gtag consent update denied) apaga hlm_first/hlm_cid sozinho; lê analytics_storage e ad_storage.
+ *  - v1.1 (opcional) init({ collect: { url, slug, key } }): com consentimento, guarda gclid/gbraid/wbraid/fbclid em hlm_cid (90 dias) e, em cada
+ *    contacto (wa.me/tel:/mailto: e lead()), envia 1 POST sem cookies e sem PII ao colector do painel (/api/collect). Sem collect = comportamento v1.
  *  - Código ref curto e opcional no texto do WhatsApp/assunto do email: "ref <origem><botão><página>" (sem dados pessoais).
  */
 (function (root, factory) {
@@ -23,7 +26,9 @@
   var GBP_SRC = /^(gbp|gmb|google_business|google_business_profile|googlebusiness|google_maps|maps)$/i;
   var ORIGIN_CODE = { ads_google: "g", ads_meta: "m", seo: "s", gbp: "b", ia: "i", social: "o", direct: "d", referral: "r", email: "e", other: "x" };
   var CTA_CODE = { header: "h", hero: "r", floating: "f", sticky: "k", footer: "t", faq: "q", form: "o", content: "c", cta: "a", promo: "p", contact: "n" };
-  var FIRST_KEY = "hlm_first", TOUCH_KEY = "hlm_touch", TTL = 90 * 24 * 3600 * 1000;
+  var FIRST_KEY = "hlm_first", TOUCH_KEY = "hlm_touch", CID_KEY = "hlm_cid", TTL = 90 * 24 * 3600 * 1000;
+  var CID_NAMES = ["gclid", "gbraid", "wbraid", "fbclid"], CID_RE = /^[A-Za-z0-9._~-]{8,512}$/;
+  var PII_RE = /[^\s@]+@[^\s@]+\.[^\s@]+|(?:\+?\d[\s.-]?){9,}/;
 
   function host(u) { try { return new URL(u).hostname.replace(/^www\./, "").toLowerCase(); } catch (e) { return ""; } }
   function aiEngine(h) { for (var i = 0; i < AI.length; i++) { if (h === AI[i][0] || h.slice(-AI[i][0].length - 1) === "." + AI[i][0]) return AI[i][1]; } return ""; }
@@ -109,17 +114,106 @@
   function readJson(s, k) { try { var v = s && s.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
   function writeJson(s, k, v) { try { s && s.setItem(k, JSON.stringify(v)); } catch (e) {} }
 
-  /** Lê o último comando de consentimento do dataLayer (gtag('consent', ...)). */
-  function analyticsGranted() {
+  /** Último valor de consentimento (gtag('consent', 'default'|'update', {...})) para uma chave: true | false | null (desconhecido). */
+  function consentOf(key, onlyUpdate) {
     var dl = root.dataLayer || [], state = null;
     for (var i = 0; i < dl.length; i++) {
       var it = dl[i];
-      if (it && it[0] === "consent" && (it[1] === "default" || it[1] === "update") && it[2] && it[2].analytics_storage) state = it[2].analytics_storage === "granted";
+      if (it && it[0] === "consent" && (it[1] === "update" || (!onlyUpdate && it[1] === "default")) && it[2] && it[2][key]) state = it[2][key] === "granted";
     }
-    return state === true;
+    return state;
+  }
+  function analyticsGranted() { return consentOf("analytics_storage") === true; }
+  function adGranted() { return consentOf("ad_storage") === true; }
+  /** Consentimento para guardar/enviar identificadores de clique: analytics_storage OU ad_storage concedido. */
+  function anyGranted() { return analyticsGranted() || adGranted(); }
+
+  // ── v1.1: colector (opcional) ──────────────────────────────────────────────────────────────────────
+  function safeText(v, max) { v = typeof v === "string" ? v.trim() : ""; return v && v.length <= max && !/[\u0000-\u001f]/.test(v) && !PII_RE.test(v) ? v : ""; }
+  function utmOf(search) {
+    var p; try { p = new URLSearchParams(search || ""); } catch (e) { return {}; }
+    var o = {}, map = { source: ["utm_source", 120], medium: ["utm_medium", 120], campaign: ["utm_campaign", 180], content: ["utm_content", 180], term: ["utm_term", 180] };
+    for (var k in map) { var v = safeText(p.get(map[k][0]), map[k][1]); if (v) o[k] = v; }
+    return o;
+  }
+  /** Só a origem (esquema+host) do referrer externo; nunca caminho nem query. */
+  function refOrigin(r, hostname) {
+    try { var u = new URL(r); if (!/^https?:$/.test(u.protocol)) return ""; if (u.hostname.replace(/^www\./, "") === String(hostname || "").replace(/^www\./, "")) return ""; return PII_RE.test(u.hostname) ? "" : u.protocol + "//" + u.hostname; } catch (e) { return ""; }
+  }
+  function collectCfg() {
+    var c = cfg.collect;
+    return c && typeof c.url === "string" && /^https?:\/\//.test(c.url) && /^[a-z0-9][a-z0-9-]{0,62}$/.test(c.slug || "") && typeof c.key === "string" && c.key.length >= 16 ? c : null;
+  }
+  function readCids() {
+    var v = readJson(store("localStorage"), CID_KEY);
+    if (!v || !v.ids || typeof v.ts !== "number" || Date.now() - v.ts > TTL) return {};
+    var out = {}; for (var i = 0; i < CID_NAMES.length; i++) { var x = v.ids[CID_NAMES[i]]; if (typeof x === "string" && CID_RE.test(x)) out[CID_NAMES[i]] = x; }
+    return out;
+  }
+  /** Guarda os identificadores de clique do URL em localStorage (90 dias), só com collect configurado e consentimento. */
+  function captureCids() {
+    if (!collectCfg() || !anyGranted()) return;
+    var p; try { p = new URLSearchParams(root.location.search || ""); } catch (e) { return; }
+    var found = {}, any = false;
+    for (var i = 0; i < CID_NAMES.length; i++) { var v = p.get(CID_NAMES[i]); if (v && CID_RE.test(v)) { found[CID_NAMES[i]] = v; any = true; } }
+    if (!any) return;
+    var ids = readCids(); for (var k in found) ids[k] = found[k];
+    writeJson(store("localStorage"), CID_KEY, { ids: ids, ts: Date.now() });
+  }
+  /** Retirar consentimento apaga o que guardámos. analytics denied → hlm_first; hlm_cid só se ad_storage também não estiver concedido. */
+  function syncConsent() {
+    var ls = store("localStorage");
+    try {
+      // só um UPDATE explícito a denied apaga (um "default: denied" no arranque não pode apagar o que um utilizador já consentiu antes)
+      if (consentOf("analytics_storage", true) === false && ls) ls.removeItem(FIRST_KEY);
+      if (ls && !anyGranted() && (consentOf("analytics_storage", true) === false || consentOf("ad_storage", true) === false)) ls.removeItem(CID_KEY);
+      if (anyGranted()) captureCids();
+    } catch (e) {}
+  }
+  var watched = false;
+  function watchConsent() {
+    if (watched) return; watched = true;
+    try {
+      var dl = root.dataLayer = root.dataLayer || [], orig = dl.push;
+      dl.push = function () {
+        var r = orig.apply(this, arguments);
+        try { for (var i = 0; i < arguments.length; i++) { var a = arguments[i]; if (a && a[0] === "consent") { syncConsent(); break; } } } catch (e) {}
+        return r;
+      };
+    } catch (e) {}
+  }
+  function rnd(n) {
+    var s = "";
+    try { var u = new Uint8Array(n); root.crypto.getRandomValues(u); for (var i = 0; i < n; i++) s += (u[i] % 36).toString(36); return s; } catch (e) {}
+    for (var j = 0; j < n; j++) s += Math.floor(Math.random() * 36).toString(36);
+    return s;
+  }
+  function send(url, payload) {
+    var body = JSON.stringify(payload);
+    // text/plain = pedido "simples" (sem pré-voo CORS); sem cookies; falhas silenciosas
+    try { if (typeof root.fetch === "function") { var pr = root.fetch(url, { method: "POST", body: body, keepalive: true, credentials: "omit", mode: "cors", headers: { "Content-Type": "text/plain;charset=UTF-8" } }); if (pr && pr.catch) pr.catch(function () {}); return; } } catch (e) {}
+    try { if (root.navigator && root.navigator.sendBeacon && typeof Blob === "function") root.navigator.sendBeacon(url, new Blob([body], { type: "text/plain;charset=UTF-8" })); } catch (e) {}
+  }
+  /** 1 POST por contacto, só com collect configurado + consentimento + algo útil (click ID, UTM ou referrer). Nunca PII nem texto da mensagem. */
+  function collect(channel, tk, code) {
+    try {
+      var c = collectCfg(); if (!c || !anyGranted()) return;
+      captureCids();
+      var ids = readCids(), utm = (tk.sess && tk.sess.utm) || {}, ref = (tk.sess && tk.sess.ref) || "";
+      var hasCid = false; for (var k in ids) hasCid = true;
+      var hasUtm = false; for (var u in utm) hasUtm = true;
+      if (!hasCid && !hasUtm && !ref) return;
+      var type = channel === "whatsapp" || channel === "phone" || channel === "email" ? channel : "form";
+      var landing = (tk.eff && tk.eff.landing_path) || root.location.pathname, pl = { slug: c.slug, key: c.key, eventId: code + ":" + Math.floor(Date.now() / 60000).toString(36) + ":" + rnd(6), type: type, occurredAt: new Date().toISOString() };
+      if (hasUtm) pl.utm = utm;
+      if (typeof landing === "string" && landing.charAt(0) === "/" && landing.charAt(1) !== "/" && landing.length <= 300 && !PII_RE.test(landing)) pl.landing = landing;
+      if (ref) pl.referrer = ref;
+      if (hasCid) pl.clickIds = ids;
+      send(c.url, pl);
+    } catch (e) {}
   }
 
-  var cfg = { legacy: {}, ref: true, debug: false };
+  var cfg = { legacy: {}, ref: true, debug: false, collect: null };
   var state = { touch: null, first: null };
 
   function currentTouch() {
@@ -127,7 +221,7 @@
     var d = deriveOrigin({ search: root.location.search, hostname: root.location.hostname }, root.document.referrer);
     var landing = root.location.pathname;
     var sess = readJson(ss, TOUCH_KEY);
-    if (!sess || (d.origin !== "direct" && sess.origin !== d.origin)) { sess = { origin: d.origin, ai_engine: d.ai_engine, campaign: d.campaign, click_id_type: d.click_id_type, landing_path: landing, ts: now }; writeJson(ss, TOUCH_KEY, sess); }
+    if (!sess || (d.origin !== "direct" && sess.origin !== d.origin)) { sess = { origin: d.origin, ai_engine: d.ai_engine, campaign: d.campaign, click_id_type: d.click_id_type, landing_path: landing, ts: now, utm: utmOf(root.location.search), ref: refOrigin(root.document.referrer, root.location.hostname) }; writeJson(ss, TOUCH_KEY, sess); }
     var first = null;
     if (analyticsGranted()) {
       first = readJson(ls, FIRST_KEY);
@@ -159,6 +253,7 @@
     emit(channel + "_click", params);
     var legacy = cfg.legacy && cfg.legacy[channel];
     if (legacy && legacy !== channel + "_click") emit(legacy, params);
+    collect(channel, tk, code);
   }
 
   /** Para formulários: devolve a atribuição a pôr em campos escondidos (origin, landing_path, etc.). */
@@ -178,8 +273,9 @@
   }
   /** Contacto CONFIRMADO (resposta de sucesso do servidor/Resend/booking): único evento generate_lead. */
   function lead(channel, extra) {
-    var a = getAttribution(), params = { channel: channel || "form", cta_location: (extra && extra.cta_location) || "form", page_path: root.location.pathname, origin: a.origin, landing_path: a.landing_path, first_origin: a.first_origin, ai_engine: a.ai_engine, campaign: a.campaign, ref_code: a.ref_code };
+    var tk = currentTouch(), a = getAttribution(), params = { channel: channel || "form", cta_location: (extra && extra.cta_location) || "form", page_path: root.location.pathname, origin: a.origin, landing_path: a.landing_path, first_origin: a.first_origin, ai_engine: a.ai_engine, campaign: a.campaign, ref_code: a.ref_code };
     emit("generate_lead", params);
+    collect(channel || "form", tk, a.ref_code);
     return a.ref_code;
   }
 
@@ -187,10 +283,13 @@
   function init(opts) {
     if (opts) { for (var k in opts) cfg[k] = opts[k]; }
     if (started || !root.document) return; started = true;
+    watchConsent();
+    syncConsent();
     currentTouch();
+    captureCids();
     root.document.addEventListener("click", onClick, true);
     root.document.addEventListener("auxclick", onClick, true);
   }
 
-  return { init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
+  return { version: "1.1.0", init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
 });

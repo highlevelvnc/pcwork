@@ -51,7 +51,7 @@
 
   var active = false; // true só depois de aceitar e de o gtag.js ser injectado
   function clearFirstTouch() {
-    try { window.localStorage.removeItem("hlm_first"); } catch (e) {}
+    try { window.localStorage.removeItem("hlm_first"); window.localStorage.removeItem("hlm_cid"); } catch (e) {}
   }
 
   function loadGA() {

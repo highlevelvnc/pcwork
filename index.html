@@ -480,6 +480,8 @@
   <meta property="og:image:alt" content="Fachada de edifício reabilitada pela PC Work Vertical" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <script src="/assets/consent.js" defer></script>
+  <script src="/hlm-track.js" defer></script>
+  <script src="/assets/hlm-track-init.js" defer></script>
 </head>
 
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
@@ -2173,12 +2175,14 @@
         if (formZone) waText += `*Zona:* ${formZone}\n`;
         if (formMsg) waText += `*Mensagem:* ${formMsg}\n`;
 
+        // Contacto por WhatsApp (intenção, não envio confirmado): hlm-track regista whatsapp_click e devolve o código de origem
+        const refCode = window.hlmTrack ? window.hlmTrack.track('whatsapp', { cta_location: 'form' }) : '';
+        if (refCode) waText += `\n(ref ${refCode})`;
         const waUrl = `https://wa.me/351966416696?text=${encodeURIComponent(waText)}`;
 
         // Abrir já, dentro do clique: o Safari (e qualquer browser no iPhone) bloqueia window.open
         // chamado depois de animações ou timers, e o pedido perdia-se.
         window.open(waUrl, '_blank');
-        if (window.pcwTrack) window.pcwTrack('whatsapp_click', { cta_location: 'form_contact', link_url: 'https://wa.me/351966416696' });
         const waLink = document.getElementById('formWaLink');
         if (waLink) waLink.href = waUrl;
 

@@ -35,7 +35,12 @@
   // ---- Consent Mode v2: tudo negado por defeito (sem pedidos de rede) ---
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
+  // gtag público (usado pelo hlm-track): comandos "event" só saem depois de aceitar,
+  // para nada ir para o dataLayer/Google antes do consentimento (opt-in estrito).
+  window.gtag = window.gtag || function () {
+    if (arguments[0] === "event" && !active) return;
+    window.dataLayer.push(arguments);
+  };
   gtag("consent", "default", {
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -45,6 +50,9 @@
   });
 
   var active = false; // true só depois de aceitar e de o gtag.js ser injectado
+  function clearFirstTouch() {
+    try { window.localStorage.removeItem("hlm_first"); } catch (e) {}
+  }
 
   function loadGA() {
     if (active) return;
@@ -86,42 +94,7 @@
   }
   window.pcwTrack = track;
 
-  function ctaLocation(a) {
-    var d = a.getAttribute("data-cta-location");
-    if (d) return d;
-    if (a.id === "floatingWa") return "floating_button";
-    if (a.id === "calcCta") return "calculator";
-    if (a.id === "formWaLink") return "form_contact_fallback";
-    if (a.closest("#stickyCta")) return "sticky_mobile";
-    if (a.closest("#exitOverlay")) return "exit_popup";
-    if (a.closest("nav")) return "header";
-    if (a.closest("footer")) return "footer";
-    var s = a.closest("section[id]");
-    if (s) return s.id;
-    if (a.closest("article")) return "article";
-    if (a.closest("section")) return "content";
-    if (a.closest("header")) return "hero";
-    return "page";
-  }
-
-  function onClick(ev) {
-    var t = ev.target;
-    if (!t || !t.closest) return;
-    var a = t.closest("a[href]");
-    if (!a) return;
-    var href = a.getAttribute("href") || "";
-    var name = null, link = null;
-    if (/^tel:/i.test(href)) {
-      name = "phone_click"; link = href.split("?")[0];
-    } else if (/^mailto:/i.test(href)) {
-      name = "email_click"; link = href.split("?")[0];
-    } else if (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)) {
-      name = "whatsapp_click"; link = href.split("?")[0].split("#")[0];
-    }
-    if (!name) return;
-    track(name, { cta_location: ctaLocation(a), link_url: link });
-  }
-  doc.addEventListener("click", onClick, true);
+  // Cliques wa.me / tel: / mailto: passam a ser enviados pelo hlm-track.js (evita eventos duplicados).
 
   // ---- aviso de cookies ------------------------------------------------
   var banner = null;
@@ -187,6 +160,7 @@
       // retirar consentimento: desliga, apaga _ga* e recarrega
       window["ga-disable-" + GA4_ID] = true;
       clearGaCookies();
+      clearFirstTouch();
       location.reload();
     }
   }
@@ -194,6 +168,7 @@
   function init() {
     try { window.localStorage.removeItem("pcwork_cookies"); } catch (e) {}
     var c = readChoice();
+    if (c !== "granted") clearFirstTouch();
     if (c === "granted") {
       loadGA();
     } else if (c !== "denied") {

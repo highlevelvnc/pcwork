@@ -262,13 +262,15 @@
     return { origin: tk.eff.origin, first_origin: (tk.first && tk.first.origin) || tk.eff.origin, ai_engine: tk.eff.ai_engine || "", campaign: tk.eff.campaign || "", landing_path: tk.eff.landing_path || root.location.pathname, ref_code: refCode(tk.eff.origin, "form", root.location.pathname) };
   }
 
-  /** Contacto sem <a> (ex.: botão que abre wa.me por JS): hlmTrack.track("whatsapp", { cta_location: "form" }). Devolve o código ref. */
+  /** Contacto sem <a> (ex.: botão que abre wa.me por JS): hlmTrack.track("whatsapp", { cta_location: "form" }). Devolve o código ref. Envia também 1 POST ao colector (v1.2). */
   function track(channel, extra) {
     var tk = currentTouch(), cta = (extra && extra.cta_location) || "content", path = root.location.pathname, code = refCode(tk.eff.origin, cta, path);
     var params = { channel: channel, cta_location: cta, page_path: path, origin: tk.eff.origin, landing_path: tk.eff.landing_path || path, first_origin: (tk.first && tk.first.origin) || tk.eff.origin, ai_engine: tk.eff.ai_engine || "", campaign: tk.eff.campaign || "", click_id_type: tk.sess.click_id_type || "", ref_code: code };
     emit(channel + "_click", params);
     var legacy = cfg.legacy && cfg.legacy[channel];
     if (legacy && legacy !== channel + "_click") emit(legacy, params);
+    // v1.2: formulário que abre o wa.me por JS também chega ao colector (só colector, sem generate_lead). collect:false desliga.
+    if (!(extra && extra.collect === false) && (channel === "whatsapp" || channel === "phone" || channel === "email")) collect(channel, tk, code);
     return code;
   }
   /** Contacto CONFIRMADO (resposta de sucesso do servidor/Resend/booking): único evento generate_lead. */
@@ -291,5 +293,5 @@
     root.document.addEventListener("auxclick", onClick, true);
   }
 
-  return { version: "1.1.0", init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
+  return { version: "1.2.0", init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
 });

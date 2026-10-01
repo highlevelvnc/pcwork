@@ -95,6 +95,46 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quanto custam pavimentos industriais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entre 18 e 45 €/m² conforme sistema, espessura e área. Para áreas acima de 1.000 m² aplicamos descontos de volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Onde fazem pavimentos industriais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavilhões industriais e armazéns logísticos; Oficinas automóveis e estações de serviço; Indústria alimentar, farmacêutica e laboratórios; Parques de estacionamento cobertos; Cozinhas industriais e zonas de produção."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como trabalham em pavimentos industriais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Diagnóstico do pavimento existente; Preparação mecânica: granalhagem ou fresagem; Reparação de fissuras e juntas; Aplicação do sistema escolhido; Marcação, sinalização e entrega com fichas técnicas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O orçamento e a visita técnica são gratuitos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O orçamento e a visita técnica são gratuitos, e a resposta chega em menos de 24 horas pelo WhatsApp, telefone ou formulário de contacto."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-background text-on-background font-body">
 
@@ -112,7 +152,7 @@
 
   <!-- Hero -->
   <header class="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
-    <img src="public/servicos/industrial.jpg" alt="Pavimentos Industriais" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50" />
+    <img fetchpriority="high" src="public/servicos/industrial.jpg" alt="Pavimentos Industriais" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50" />
     <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
     <div class="relative z-10 px-6 md:px-12 pb-12 md:pb-16 max-w-6xl">
       <a href="index.html" class="text-primary font-label text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1 mb-4">&larr; Voltar</a>
@@ -169,12 +209,44 @@
       <p class="text-white font-headline text-xl md:text-2xl leading-relaxed">Entre 18 e 45 €/m² conforme sistema, espessura e área. Para áreas acima de 1.000 m² aplicamos descontos de volume.</p>
     </section>
 
+        <!-- FAQ -->
+    <section class="mb-12 md:mb-16" data-faq>
+      <span class="text-tertiary font-label text-xs tracking-[0.2em] uppercase mb-3 block">FAQ</span>
+      <h2 class="font-headline font-black text-3xl md:text-4xl uppercase tracking-tighter text-white mb-6">Perguntas frequentes</h2>
+      <div class="max-w-3xl divide-y divide-white/10 border-y border-white/10">
+        <details class="py-5 group">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-headline font-bold text-lg text-white">Quanto custam pavimentos industriais?<span aria-hidden="true" class="text-primary-container text-2xl leading-none transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-on-surface-variant leading-relaxed">Entre 18 e 45 €/m² conforme sistema, espessura e área. Para áreas acima de 1.000 m² aplicamos descontos de volume.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-headline font-bold text-lg text-white">Onde fazem pavimentos industriais?<span aria-hidden="true" class="text-primary-container text-2xl leading-none transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-on-surface-variant leading-relaxed">Pavilhões industriais e armazéns logísticos; Oficinas automóveis e estações de serviço; Indústria alimentar, farmacêutica e laboratórios; Parques de estacionamento cobertos; Cozinhas industriais e zonas de produção.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-headline font-bold text-lg text-white">Como trabalham em pavimentos industriais?<span aria-hidden="true" class="text-primary-container text-2xl leading-none transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-on-surface-variant leading-relaxed">Diagnóstico do pavimento existente; Preparação mecânica: granalhagem ou fresagem; Reparação de fissuras e juntas; Aplicação do sistema escolhido; Marcação, sinalização e entrega com fichas técnicas.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-headline font-bold text-lg text-white">O orçamento e a visita técnica são gratuitos?<span aria-hidden="true" class="text-primary-container text-2xl leading-none transition-transform group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-on-surface-variant leading-relaxed">Sim. O orçamento e a visita técnica são gratuitos, e a resposta chega em menos de 24 horas pelo WhatsApp, telefone ou formulário de contacto.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Outros serviços -->
+    <section class="mb-16" data-related>
+      <span class="text-tertiary font-label text-xs tracking-[0.2em] uppercase mb-3 block">Outros servi&ccedil;os</span>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-base md:text-lg max-w-3xl"><li><a href="microcimento.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Microcimento</a></li><li><a href="pavimentos-desportivos.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Pavimentos desportivos</a></li><li><a href="impermeabilizacao.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Impermeabilização</a></li><li><a href="relva-artificial.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Relva artificial</a></li><li><a href="isolamento-fachadas.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Isolamento de fachadas (ETICS e Cappotto)</a></li><li><a href="reabilitacao.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Reabilitação de edifícios e fachadas</a></li><li><a href="trabalhos-verticais.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Trabalhos verticais (acesso por corda)</a></li></ul>
+      <p class="mt-6 text-on-surface-variant max-w-3xl">Sede em Amadora, com equipas em todo o distrito de Lisboa e Setúbal. <a href="zonas.html" class="text-primary hover:text-white underline underline-offset-4 transition-colors">Ver zonas de atua&ccedil;&atilde;o</a>.</p>
+    </section>
+
     <!-- CTA -->
     <section class="bg-primary-container/10 border border-primary-container/30 p-8 md:p-12 text-center">
       <h2 class="font-headline font-black text-3xl md:text-4xl uppercase tracking-tighter text-white mb-4 leading-tight">PRONTO PARA AVAN&Ccedil;AR?</h2>
       <p class="text-on-surface-variant mb-8 max-w-xl mx-auto">Or&ccedil;amento e visita t&eacute;cnica gratuitos. Resposta em menos de 24 horas.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://wa.me/351966416696?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20Pavimentos%20Industriais." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 py-4 font-headline font-bold uppercase tracking-widest hover:bg-[#20bd5a] transition-colors">WhatsApp directo</a>
+        <a href="tel:+351966416696" class="border border-primary-container/40 text-primary px-8 py-4 font-headline font-bold uppercase tracking-widest hover:bg-primary-container/10 transition-colors">Ligar +351 966 416 696</a>
         <a href="index.html#contact" class="border border-white/20 text-white px-8 py-4 font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">Formul&aacute;rio de contacto</a>
       </div>
     </section>

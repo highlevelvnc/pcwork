@@ -1,0 +1,15 @@
+{
+  "name": "pcwork-tailwind-build",
+  "private": true,
+  "description": "Compila o CSS estático (substitui cdn.tailwindcss.com). Uso: npm ci && npm run build",
+  "scripts": {
+    "build": "node build.cjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "0.1.1",
+    "@tailwindcss/forms": "0.5.11",
+    "cssnano": "^7.1.9",
+    "postcss": "^8.5.28",
+    "tailwindcss": "3.4.17"
+  }
+}

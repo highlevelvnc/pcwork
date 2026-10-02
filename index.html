@@ -210,76 +210,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "background": "#0B0B0D",
-            "surface-variant": "#2A2A2E",
-            "surface-container": "#141416",
-            "on-error": "#690005",
-            "outline": "#8A7D75",
-            "inverse-primary": "#904d00",
-            "tertiary-fixed": "#B8F0F0",
-            "inverse-on-surface": "#1A1A1C",
-            "on-primary-container": "#FFFFFF",
-            "on-secondary-fixed": "#2f1500",
-            "secondary-fixed": "#ffdcc3",
-            "outline-variant": "#3D3630",
-            "primary-fixed": "#ffdcc3",
-            "on-tertiary-fixed-variant": "#004e5b",
-            "on-tertiary-fixed": "#001f25",
-            "secondary-fixed-dim": "#efbc95",
-            "tertiary-container": "#2A9D9A",
-            "surface-dim": "#0B0B0D",
-            "primary-fixed-dim": "#F0A050",
-            "surface-container-high": "#1E1E21",
-            "on-tertiary": "#00363f",
-            "on-surface-variant": "#B0A8A0",
-            "inverse-surface": "#F2F0F1",
-            "on-secondary-container": "#dcab85",
-            "primary": "#F0A050",
-            "surface-tint": "#E8872A",
-            "on-surface": "#F2F0F1",
-            "on-secondary-fixed-variant": "#623f21",
-            "on-primary-fixed-variant": "#6e3900",
-            "tertiary": "#4DBDBA",
-            "secondary": "#D4A574",
-            "surface-container-lowest": "#070709",
-            "error": "#ffb4ab",
-            "on-error-container": "#ffdad6",
-            "on-secondary": "#48290d",
-            "on-primary-fixed": "#2f1500",
-            "secondary-container": "#3D2E1F",
-            "error-container": "#93000a",
-            "tertiary-fixed-dim": "#4DBDBA",
-            "surface-container-highest": "#2A2A2E",
-            "surface-bright": "#323236",
-            "primary-container": "#E8872A",
-            "surface": "#0B0B0D",
-            "on-tertiary-container": "#004854",
-            "on-primary": "#FFFFFF",
-            "surface-container-low": "#101012",
-            "on-background": "#F2F0F1"
-          },
-          borderRadius: {
-            DEFAULT: "0px",
-            lg: "0px",
-            xl: "0px",
-            full: "0px"
-          },
-          fontFamily: {
-            headline: ["Space Grotesk", "sans-serif"],
-            body: ["Inter", "sans-serif"],
-            label: ["Inter", "sans-serif"]
-          }
-        },
-      },
-    }
-  </script>
   <style>
     /* Evita overflow horizontal em mobile (clip, não hidden) */
     html, body { overflow-x: clip; }
@@ -482,6 +412,7 @@
   <script src="/assets/consent.js" defer></script>
   <script src="/hlm-track.js" defer></script>
   <script src="/assets/hlm-track-init.js" defer></script>
+<link rel="stylesheet" href="/assets/tailwind-home.css" />
 </head>
 
 <body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden">

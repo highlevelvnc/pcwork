@@ -4,7 +4,7 @@
  * >>> ÚNICO sítio do ID de medição GA4 <<<
  * Enquanto GA4_ID estiver vazio este ficheiro não faz nada: não mostra aviso,
  * não carrega nada do Google e esconde os links "Preferências de cookies".
- * Para activar: GA4_ID = "G-XXXXXXXXXX".
+ * O ID de medição activo é o definido em GA4_ID (mais abaixo).
  */
 (function () {
   "use strict";

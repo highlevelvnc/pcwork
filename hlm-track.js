@@ -1,4 +1,4 @@
-/*! hlm-track v1.1 — tipo de contacto + origem do lead, sem dependências. HLM Marketing.
+/*! hlm-track v1.3 — tipo de contacto + origem do lead, sem dependências. HLM Marketing.
  *  - Tipo vem do próprio link: wa.me/api.whatsapp.com → whatsapp, tel: → phone, mailto: → email.
  *  - Origem: ads_google | ads_meta | seo | gbp | ia | social | direct | referral | email | other.
  *  - Primeiro toque guardado 90 dias em localStorage SÓ com analytics_storage concedido; sem consentimento só sessionStorage.
@@ -7,6 +7,7 @@
  *  - v1.1 (opcional) init({ collect: { url, slug, key } }): com consentimento, guarda gclid/gbraid/wbraid/fbclid em hlm_cid (90 dias) e, em cada
  *    contacto (wa.me/tel:/mailto: e lead()), envia 1 POST sem cookies e sem PII ao colector do painel (/api/collect). Sem collect = comportamento v1.
  *  - Código ref curto e opcional no texto do WhatsApp/assunto do email: "ref <origem><botão><página>" (sem dados pessoais).
+ *  - v1.3 init({ refStyle: "classic" | "discreet" }): classic (defeito) = "… (ref xxxx)"; discreet = linha final "Ref. xxxx" (assunto: " - Ref. xxxx"). Mesmo código de 4 caracteres.
  */
 (function (root, factory) {
   var api = factory(root);
@@ -73,19 +74,24 @@
     return "";
   }
 
-  function withRef(href, channel, code) {
+  // Já tem código (qualquer estilo)? Evita duplicar: "(ref xxxx)" clássico ou "Ref. xxxx" discreto.
+  var HAS_REF = /\(ref [a-z0-9]{4}\)|\bref\. [a-z0-9]{4}\b/i;
+
+  /** style: "classic" (por defeito) → "… (ref xxxx)"; "discreet" → linha final "Ref. xxxx" (WhatsApp) / " - Ref. xxxx" (assunto do email). */
+  function withRef(href, channel, code, style) {
+    var discreet = style === "discreet";
     try {
       if (channel === "whatsapp") {
         var u = new URL(href, "https://x.invalid"); var t = u.searchParams.get("text") || "";
-        if (/\(ref [a-z0-9]{4}\)/.test(t)) return href;
-        u.searchParams.set("text", (t ? t + " " : "") + "(ref " + code + ")");
+        if (HAS_REF.test(t)) return href;
+        u.searchParams.set("text", discreet ? (t ? t + "\n" : "") + "Ref. " + code : (t ? t + " " : "") + "(ref " + code + ")");
         return /^https?:/i.test(href) ? u.toString().replace(/\+/g, "%20") : href;
       }
       if (channel === "email") {
         var m = String(href).match(/^mailto:([^?]*)(\?(.*))?$/i); if (!m) return href;
         var q = new URLSearchParams(m[3] || ""); var s = q.get("subject") || "Pedido de orçamento";
-        if (/\(ref [a-z0-9]{4}\)/.test(s)) return href;
-        q.set("subject", s + " (ref " + code + ")");
+        if (HAS_REF.test(s)) return href;
+        q.set("subject", s + (discreet ? " - Ref. " + code : " (ref " + code + ")"));
         return "mailto:" + m[1] + "?" + q.toString().replace(/\+/g, "%20");
       }
     } catch (e) {}
@@ -213,7 +219,7 @@
     } catch (e) {}
   }
 
-  var cfg = { legacy: {}, ref: true, debug: false, collect: null };
+  var cfg = { legacy: {}, ref: true, refStyle: "classic", debug: false, collect: null };
   var state = { touch: null, first: null };
 
   function currentTouch() {
@@ -240,11 +246,13 @@
   }
 
   function onClick(ev) {
+    // auxclick também dispara com o botão direito (menu de contexto: copiar link): não é um contacto.
+    if (ev.type === "auxclick" && ev.button === 2) return;
     var t = ev.target; var a = t && t.closest ? t.closest("a[href]") : null; if (!a) return;
     var href = a.getAttribute("href"); var channel = classify(href); if (!channel) return;
     var tk = currentTouch(), cta = ctaLocation(a), path = root.location.pathname;
     var code = refCode(tk.eff.origin, cta, path);
-    if (cfg.ref && (channel === "whatsapp" || channel === "email")) { var nh = withRef(href, channel, code); if (nh !== href) a.setAttribute("href", nh); }
+    if (cfg.ref && (channel === "whatsapp" || channel === "email")) { var nh = withRef(href, channel, code, cfg.refStyle); if (nh !== href) a.setAttribute("href", nh); }
     var params = {
       channel: channel, cta_location: cta, page_path: path, origin: tk.eff.origin, landing_path: tk.eff.landing_path || path,
       first_origin: (tk.first && tk.first.origin) || tk.eff.origin, ai_engine: tk.eff.ai_engine || "", campaign: tk.eff.campaign || "",
@@ -293,5 +301,5 @@
     root.document.addEventListener("auxclick", onClick, true);
   }
 
-  return { version: "1.2.0", init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
+  return { version: "1.3.1", init: init, track: track, lead: lead, deriveOrigin: deriveOrigin, refCode: refCode, classify: classify, withRef: withRef, getAttribution: getAttribution, pageHash: pageHash, ORIGIN_CODE: ORIGIN_CODE, CTA_CODE: CTA_CODE };
 });
